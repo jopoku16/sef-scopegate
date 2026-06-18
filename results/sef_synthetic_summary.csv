@@ -1,0 +1,9 @@
+metric,value
+mean_error,0.162
+high_conflict_error,0.3584
+low_conflict_error,0.061933534743202415
+high_res_error,0.0432
+low_res_error,0.36
+mean_conflict,0.31902037521607474
+mean_stability,0.9902444987815233
+mean_res,0.6744657239429778

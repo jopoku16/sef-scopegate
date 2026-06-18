@@ -1,0 +1,1201 @@
+dataset,seed,method,review_rate,accepted_error
+Iris,0,no review,0.3,0.0
+Iris,0,conflict only,0.3,0.0
+Iris,0,stability only,0.3,0.0
+Iris,0,RES,0.3,0.0
+Iris,0,confidence,0.3,0.0
+Iris,0,confidence + RES,0.3,0.0
+Wine,0,no review,0.3,0.023809523809523808
+Wine,0,conflict only,0.3,0.0
+Wine,0,stability only,0.3,0.0
+Wine,0,RES,0.3,0.0
+Wine,0,confidence,0.3,0.0
+Wine,0,confidence + RES,0.3,0.0
+Breast cancer,0,no review,0.3,0.035
+Breast cancer,0,conflict only,0.3,0.0
+Breast cancer,0,stability only,0.3,0.02857142857142857
+Breast cancer,0,RES,0.3,0.0
+Breast cancer,0,confidence,0.3,0.0
+Breast cancer,0,confidence + RES,0.3,0.0
+Digits,0,no review,0.3,0.015625
+Digits,0,conflict only,0.3,0.0
+Digits,0,stability only,0.3,0.011111111111111112
+Digits,0,RES,0.3,0.0
+Digits,0,confidence,0.3,0.0
+Digits,0,confidence + RES,0.3,0.0
+Iris,1,no review,0.3,0.02857142857142857
+Iris,1,conflict only,0.3,0.0
+Iris,1,stability only,0.3,0.0
+Iris,1,RES,0.3,0.0
+Iris,1,confidence,0.3,0.0
+Iris,1,confidence + RES,0.3,0.0
+Wine,1,no review,0.3,0.07142857142857142
+Wine,1,conflict only,0.3,0.0
+Wine,1,stability only,0.3,0.1
+Wine,1,RES,0.3,0.0
+Wine,1,confidence,0.3,0.0
+Wine,1,confidence + RES,0.3,0.0
+Breast cancer,1,no review,0.3,0.035
+Breast cancer,1,conflict only,0.3,0.0
+Breast cancer,1,stability only,0.3,0.007142857142857143
+Breast cancer,1,RES,0.3,0.0
+Breast cancer,1,confidence,0.3,0.0
+Breast cancer,1,confidence + RES,0.3,0.0
+Digits,1,no review,0.3,0.0
+Digits,1,conflict only,0.3,0.0
+Digits,1,stability only,0.3,0.0
+Digits,1,RES,0.3,0.0
+Digits,1,confidence,0.3,0.0
+Digits,1,confidence + RES,0.3,0.0
+Iris,2,no review,0.3,0.02857142857142857
+Iris,2,conflict only,0.3,0.0
+Iris,2,stability only,0.3,0.0
+Iris,2,RES,0.3,0.0
+Iris,2,confidence,0.3,0.0
+Iris,2,confidence + RES,0.3,0.0
+Wine,2,no review,0.3,0.047619047619047616
+Wine,2,conflict only,0.3,0.0
+Wine,2,stability only,0.3,0.03333333333333333
+Wine,2,RES,0.3,0.0
+Wine,2,confidence,0.3,0.0
+Wine,2,confidence + RES,0.3,0.0
+Breast cancer,2,no review,0.3,0.02
+Breast cancer,2,conflict only,0.3,0.007142857142857143
+Breast cancer,2,stability only,0.3,0.0
+Breast cancer,2,RES,0.3,0.007142857142857143
+Breast cancer,2,confidence,0.3,0.007142857142857143
+Breast cancer,2,confidence + RES,0.3,0.007142857142857143
+Digits,2,no review,0.3,0.0
+Digits,2,conflict only,0.3,0.0
+Digits,2,stability only,0.3,0.0
+Digits,2,RES,0.3,0.0
+Digits,2,confidence,0.3,0.0
+Digits,2,confidence + RES,0.3,0.0
+Iris,3,no review,0.3,0.02857142857142857
+Iris,3,conflict only,0.3,0.0
+Iris,3,stability only,0.3,0.04
+Iris,3,RES,0.3,0.0
+Iris,3,confidence,0.3,0.0
+Iris,3,confidence + RES,0.3,0.0
+Wine,3,no review,0.3,0.023809523809523808
+Wine,3,conflict only,0.3,0.0
+Wine,3,stability only,0.3,0.0
+Wine,3,RES,0.3,0.0
+Wine,3,confidence,0.3,0.0
+Wine,3,confidence + RES,0.3,0.0
+Breast cancer,3,no review,0.3,0.025
+Breast cancer,3,conflict only,0.3,0.0
+Breast cancer,3,stability only,0.3,0.014285714285714285
+Breast cancer,3,RES,0.3,0.0
+Breast cancer,3,confidence,0.3,0.0
+Breast cancer,3,confidence + RES,0.3,0.0
+Digits,3,no review,0.3,0.0078125
+Digits,3,conflict only,0.3,0.0
+Digits,3,stability only,0.3,0.0
+Digits,3,RES,0.3,0.0
+Digits,3,confidence,0.3,0.0
+Digits,3,confidence + RES,0.3,0.0
+Iris,4,no review,0.3,0.02857142857142857
+Iris,4,conflict only,0.3,0.0
+Iris,4,stability only,0.3,0.0
+Iris,4,RES,0.3,0.0
+Iris,4,confidence,0.3,0.0
+Iris,4,confidence + RES,0.3,0.0
+Wine,4,no review,0.3,0.023809523809523808
+Wine,4,conflict only,0.3,0.0
+Wine,4,stability only,0.3,0.03333333333333333
+Wine,4,RES,0.3,0.0
+Wine,4,confidence,0.3,0.0
+Wine,4,confidence + RES,0.3,0.0
+Breast cancer,4,no review,0.3,0.03
+Breast cancer,4,conflict only,0.3,0.007142857142857143
+Breast cancer,4,stability only,0.3,0.02142857142857143
+Breast cancer,4,RES,0.3,0.007142857142857143
+Breast cancer,4,confidence,0.3,0.007142857142857143
+Breast cancer,4,confidence + RES,0.3,0.007142857142857143
+Digits,4,no review,0.3,0.0
+Digits,4,conflict only,0.3,0.0
+Digits,4,stability only,0.3,0.0
+Digits,4,RES,0.3,0.0
+Digits,4,confidence,0.3,0.0
+Digits,4,confidence + RES,0.3,0.0
+Iris,5,no review,0.3,0.02857142857142857
+Iris,5,conflict only,0.3,0.0
+Iris,5,stability only,0.3,0.04
+Iris,5,RES,0.3,0.0
+Iris,5,confidence,0.3,0.0
+Iris,5,confidence + RES,0.3,0.0
+Wine,5,no review,0.3,0.047619047619047616
+Wine,5,conflict only,0.3,0.0
+Wine,5,stability only,0.3,0.03333333333333333
+Wine,5,RES,0.3,0.0
+Wine,5,confidence,0.3,0.0
+Wine,5,confidence + RES,0.3,0.0
+Breast cancer,5,no review,0.3,0.02
+Breast cancer,5,conflict only,0.3,0.0
+Breast cancer,5,stability only,0.3,0.014285714285714285
+Breast cancer,5,RES,0.3,0.0
+Breast cancer,5,confidence,0.3,0.0
+Breast cancer,5,confidence + RES,0.3,0.0
+Digits,5,no review,0.3,0.0
+Digits,5,conflict only,0.3,0.0
+Digits,5,stability only,0.3,0.0
+Digits,5,RES,0.3,0.0
+Digits,5,confidence,0.3,0.0
+Digits,5,confidence + RES,0.3,0.0
+Iris,6,no review,0.3,0.05714285714285714
+Iris,6,conflict only,0.3,0.0
+Iris,6,stability only,0.3,0.0
+Iris,6,RES,0.3,0.0
+Iris,6,confidence,0.3,0.0
+Iris,6,confidence + RES,0.3,0.0
+Wine,6,no review,0.3,0.0
+Wine,6,conflict only,0.3,0.0
+Wine,6,stability only,0.3,0.0
+Wine,6,RES,0.3,0.0
+Wine,6,confidence,0.3,0.0
+Wine,6,confidence + RES,0.3,0.0
+Breast cancer,6,no review,0.3,0.025
+Breast cancer,6,conflict only,0.3,0.0
+Breast cancer,6,stability only,0.3,0.007142857142857143
+Breast cancer,6,RES,0.3,0.0
+Breast cancer,6,confidence,0.3,0.0
+Breast cancer,6,confidence + RES,0.3,0.0
+Digits,6,no review,0.3,0.015625
+Digits,6,conflict only,0.3,0.0
+Digits,6,stability only,0.3,0.022222222222222223
+Digits,6,RES,0.3,0.0
+Digits,6,confidence,0.3,0.0
+Digits,6,confidence + RES,0.3,0.0
+Iris,7,no review,0.3,0.05714285714285714
+Iris,7,conflict only,0.3,0.0
+Iris,7,stability only,0.3,0.0
+Iris,7,RES,0.3,0.0
+Iris,7,confidence,0.3,0.0
+Iris,7,confidence + RES,0.3,0.0
+Wine,7,no review,0.3,0.023809523809523808
+Wine,7,conflict only,0.3,0.0
+Wine,7,stability only,0.3,0.03333333333333333
+Wine,7,RES,0.3,0.0
+Wine,7,confidence,0.3,0.0
+Wine,7,confidence + RES,0.3,0.0
+Breast cancer,7,no review,0.3,0.03
+Breast cancer,7,conflict only,0.3,0.0
+Breast cancer,7,stability only,0.3,0.007142857142857143
+Breast cancer,7,RES,0.3,0.0
+Breast cancer,7,confidence,0.3,0.0
+Breast cancer,7,confidence + RES,0.3,0.0
+Digits,7,no review,0.3,0.0
+Digits,7,conflict only,0.3,0.0
+Digits,7,stability only,0.3,0.0
+Digits,7,RES,0.3,0.0
+Digits,7,confidence,0.3,0.0
+Digits,7,confidence + RES,0.3,0.0
+Iris,8,no review,0.3,0.05714285714285714
+Iris,8,conflict only,0.3,0.0
+Iris,8,stability only,0.3,0.0
+Iris,8,RES,0.3,0.0
+Iris,8,confidence,0.3,0.0
+Iris,8,confidence + RES,0.3,0.0
+Wine,8,no review,0.3,0.023809523809523808
+Wine,8,conflict only,0.3,0.0
+Wine,8,stability only,0.3,0.0
+Wine,8,RES,0.3,0.0
+Wine,8,confidence,0.3,0.0
+Wine,8,confidence + RES,0.3,0.0
+Breast cancer,8,no review,0.3,0.04
+Breast cancer,8,conflict only,0.3,0.0
+Breast cancer,8,stability only,0.3,0.02142857142857143
+Breast cancer,8,RES,0.3,0.0
+Breast cancer,8,confidence,0.3,0.0
+Breast cancer,8,confidence + RES,0.3,0.0
+Digits,8,no review,0.3,0.0
+Digits,8,conflict only,0.3,0.0
+Digits,8,stability only,0.3,0.0
+Digits,8,RES,0.3,0.0
+Digits,8,confidence,0.3,0.0
+Digits,8,confidence + RES,0.3,0.0
+Iris,9,no review,0.3,0.08571428571428572
+Iris,9,conflict only,0.3,0.0
+Iris,9,stability only,0.3,0.04
+Iris,9,RES,0.3,0.0
+Iris,9,confidence,0.3,0.0
+Iris,9,confidence + RES,0.3,0.0
+Wine,9,no review,0.3,0.047619047619047616
+Wine,9,conflict only,0.3,0.03333333333333333
+Wine,9,stability only,0.3,0.0
+Wine,9,RES,0.3,0.03333333333333333
+Wine,9,confidence,0.3,0.0
+Wine,9,confidence + RES,0.3,0.0
+Breast cancer,9,no review,0.3,0.03
+Breast cancer,9,conflict only,0.3,0.0
+Breast cancer,9,stability only,0.3,0.007142857142857143
+Breast cancer,9,RES,0.3,0.0
+Breast cancer,9,confidence,0.3,0.0
+Breast cancer,9,confidence + RES,0.3,0.0
+Digits,9,no review,0.3,0.0
+Digits,9,conflict only,0.3,0.0
+Digits,9,stability only,0.3,0.0
+Digits,9,RES,0.3,0.0
+Digits,9,confidence,0.3,0.0
+Digits,9,confidence + RES,0.3,0.0
+Iris,10,no review,0.3,0.05714285714285714
+Iris,10,conflict only,0.3,0.0
+Iris,10,stability only,0.3,0.0
+Iris,10,RES,0.3,0.0
+Iris,10,confidence,0.3,0.0
+Iris,10,confidence + RES,0.3,0.0
+Wine,10,no review,0.3,0.047619047619047616
+Wine,10,conflict only,0.3,0.03333333333333333
+Wine,10,stability only,0.3,0.03333333333333333
+Wine,10,RES,0.3,0.03333333333333333
+Wine,10,confidence,0.3,0.0
+Wine,10,confidence + RES,0.3,0.0
+Breast cancer,10,no review,0.3,0.03
+Breast cancer,10,conflict only,0.3,0.007142857142857143
+Breast cancer,10,stability only,0.3,0.02142857142857143
+Breast cancer,10,RES,0.3,0.007142857142857143
+Breast cancer,10,confidence,0.3,0.007142857142857143
+Breast cancer,10,confidence + RES,0.3,0.007142857142857143
+Digits,10,no review,0.3,0.015625
+Digits,10,conflict only,0.3,0.0
+Digits,10,stability only,0.3,0.011111111111111112
+Digits,10,RES,0.3,0.0
+Digits,10,confidence,0.3,0.0
+Digits,10,confidence + RES,0.3,0.0
+Iris,11,no review,0.3,0.08571428571428572
+Iris,11,conflict only,0.3,0.0
+Iris,11,stability only,0.3,0.0
+Iris,11,RES,0.3,0.0
+Iris,11,confidence,0.3,0.0
+Iris,11,confidence + RES,0.3,0.0
+Wine,11,no review,0.3,0.047619047619047616
+Wine,11,conflict only,0.3,0.03333333333333333
+Wine,11,stability only,0.3,0.0
+Wine,11,RES,0.3,0.03333333333333333
+Wine,11,confidence,0.3,0.0
+Wine,11,confidence + RES,0.3,0.0
+Breast cancer,11,no review,0.3,0.03
+Breast cancer,11,conflict only,0.3,0.007142857142857143
+Breast cancer,11,stability only,0.3,0.014285714285714285
+Breast cancer,11,RES,0.3,0.007142857142857143
+Breast cancer,11,confidence,0.3,0.007142857142857143
+Breast cancer,11,confidence + RES,0.3,0.007142857142857143
+Digits,11,no review,0.3,0.0078125
+Digits,11,conflict only,0.3,0.0
+Digits,11,stability only,0.3,0.011111111111111112
+Digits,11,RES,0.3,0.0
+Digits,11,confidence,0.3,0.0
+Digits,11,confidence + RES,0.3,0.0
+Iris,12,no review,0.3,0.08571428571428572
+Iris,12,conflict only,0.3,0.0
+Iris,12,stability only,0.3,0.04
+Iris,12,RES,0.3,0.0
+Iris,12,confidence,0.3,0.0
+Iris,12,confidence + RES,0.3,0.0
+Wine,12,no review,0.3,0.0
+Wine,12,conflict only,0.3,0.0
+Wine,12,stability only,0.3,0.0
+Wine,12,RES,0.3,0.0
+Wine,12,confidence,0.3,0.0
+Wine,12,confidence + RES,0.3,0.0
+Breast cancer,12,no review,0.3,0.02
+Breast cancer,12,conflict only,0.3,0.0
+Breast cancer,12,stability only,0.3,0.014285714285714285
+Breast cancer,12,RES,0.3,0.0
+Breast cancer,12,confidence,0.3,0.0
+Breast cancer,12,confidence + RES,0.3,0.0
+Digits,12,no review,0.3,0.0
+Digits,12,conflict only,0.3,0.0
+Digits,12,stability only,0.3,0.0
+Digits,12,RES,0.3,0.0
+Digits,12,confidence,0.3,0.0
+Digits,12,confidence + RES,0.3,0.0
+Iris,13,no review,0.3,0.0
+Iris,13,conflict only,0.3,0.0
+Iris,13,stability only,0.3,0.0
+Iris,13,RES,0.3,0.0
+Iris,13,confidence,0.3,0.0
+Iris,13,confidence + RES,0.3,0.0
+Wine,13,no review,0.3,0.09523809523809523
+Wine,13,conflict only,0.3,0.03333333333333333
+Wine,13,stability only,0.3,0.06666666666666667
+Wine,13,RES,0.3,0.03333333333333333
+Wine,13,confidence,0.3,0.0
+Wine,13,confidence + RES,0.3,0.0
+Breast cancer,13,no review,0.3,0.025
+Breast cancer,13,conflict only,0.3,0.0
+Breast cancer,13,stability only,0.3,0.0
+Breast cancer,13,RES,0.3,0.0
+Breast cancer,13,confidence,0.3,0.0
+Breast cancer,13,confidence + RES,0.3,0.0
+Digits,13,no review,0.3,0.0078125
+Digits,13,conflict only,0.3,0.0
+Digits,13,stability only,0.3,0.011111111111111112
+Digits,13,RES,0.3,0.0
+Digits,13,confidence,0.3,0.0
+Digits,13,confidence + RES,0.3,0.0
+Iris,14,no review,0.3,0.02857142857142857
+Iris,14,conflict only,0.3,0.0
+Iris,14,stability only,0.3,0.0
+Iris,14,RES,0.3,0.0
+Iris,14,confidence,0.3,0.0
+Iris,14,confidence + RES,0.3,0.0
+Wine,14,no review,0.3,0.0
+Wine,14,conflict only,0.3,0.0
+Wine,14,stability only,0.3,0.0
+Wine,14,RES,0.3,0.0
+Wine,14,confidence,0.3,0.0
+Wine,14,confidence + RES,0.3,0.0
+Breast cancer,14,no review,0.3,0.015
+Breast cancer,14,conflict only,0.3,0.0
+Breast cancer,14,stability only,0.3,0.014285714285714285
+Breast cancer,14,RES,0.3,0.0
+Breast cancer,14,confidence,0.3,0.0
+Breast cancer,14,confidence + RES,0.3,0.0
+Digits,14,no review,0.3,0.015625
+Digits,14,conflict only,0.3,0.0
+Digits,14,stability only,0.3,0.011111111111111112
+Digits,14,RES,0.3,0.0
+Digits,14,confidence,0.3,0.0
+Digits,14,confidence + RES,0.3,0.0
+Iris,15,no review,0.3,0.05714285714285714
+Iris,15,conflict only,0.3,0.0
+Iris,15,stability only,0.3,0.0
+Iris,15,RES,0.3,0.0
+Iris,15,confidence,0.3,0.0
+Iris,15,confidence + RES,0.3,0.0
+Wine,15,no review,0.3,0.023809523809523808
+Wine,15,conflict only,0.3,0.0
+Wine,15,stability only,0.3,0.0
+Wine,15,RES,0.3,0.0
+Wine,15,confidence,0.3,0.0
+Wine,15,confidence + RES,0.3,0.0
+Breast cancer,15,no review,0.3,0.005
+Breast cancer,15,conflict only,0.3,0.0
+Breast cancer,15,stability only,0.3,0.007142857142857143
+Breast cancer,15,RES,0.3,0.0
+Breast cancer,15,confidence,0.3,0.0
+Breast cancer,15,confidence + RES,0.3,0.0
+Digits,15,no review,0.3,0.0078125
+Digits,15,conflict only,0.3,0.0
+Digits,15,stability only,0.3,0.011111111111111112
+Digits,15,RES,0.3,0.0
+Digits,15,confidence,0.3,0.0
+Digits,15,confidence + RES,0.3,0.0
+Iris,16,no review,0.3,0.02857142857142857
+Iris,16,conflict only,0.3,0.0
+Iris,16,stability only,0.3,0.0
+Iris,16,RES,0.3,0.0
+Iris,16,confidence,0.3,0.0
+Iris,16,confidence + RES,0.3,0.0
+Wine,16,no review,0.3,0.0
+Wine,16,conflict only,0.3,0.0
+Wine,16,stability only,0.3,0.0
+Wine,16,RES,0.3,0.0
+Wine,16,confidence,0.3,0.0
+Wine,16,confidence + RES,0.3,0.0
+Breast cancer,16,no review,0.3,0.01
+Breast cancer,16,conflict only,0.3,0.0
+Breast cancer,16,stability only,0.3,0.007142857142857143
+Breast cancer,16,RES,0.3,0.0
+Breast cancer,16,confidence,0.3,0.007142857142857143
+Breast cancer,16,confidence + RES,0.3,0.0
+Digits,16,no review,0.3,0.0
+Digits,16,conflict only,0.3,0.0
+Digits,16,stability only,0.3,0.0
+Digits,16,RES,0.3,0.0
+Digits,16,confidence,0.3,0.0
+Digits,16,confidence + RES,0.3,0.0
+Iris,17,no review,0.3,0.02857142857142857
+Iris,17,conflict only,0.3,0.0
+Iris,17,stability only,0.3,0.0
+Iris,17,RES,0.3,0.0
+Iris,17,confidence,0.3,0.0
+Iris,17,confidence + RES,0.3,0.0
+Wine,17,no review,0.3,0.0
+Wine,17,conflict only,0.3,0.0
+Wine,17,stability only,0.3,0.0
+Wine,17,RES,0.3,0.0
+Wine,17,confidence,0.3,0.0
+Wine,17,confidence + RES,0.3,0.0
+Breast cancer,17,no review,0.3,0.02
+Breast cancer,17,conflict only,0.3,0.0
+Breast cancer,17,stability only,0.3,0.0
+Breast cancer,17,RES,0.3,0.0
+Breast cancer,17,confidence,0.3,0.007142857142857143
+Breast cancer,17,confidence + RES,0.3,0.0
+Digits,17,no review,0.3,0.015625
+Digits,17,conflict only,0.3,0.0
+Digits,17,stability only,0.3,0.022222222222222223
+Digits,17,RES,0.3,0.0
+Digits,17,confidence,0.3,0.0
+Digits,17,confidence + RES,0.3,0.0
+Iris,18,no review,0.3,0.02857142857142857
+Iris,18,conflict only,0.3,0.0
+Iris,18,stability only,0.3,0.0
+Iris,18,RES,0.3,0.0
+Iris,18,confidence,0.3,0.0
+Iris,18,confidence + RES,0.3,0.0
+Wine,18,no review,0.3,0.07142857142857142
+Wine,18,conflict only,0.3,0.03333333333333333
+Wine,18,stability only,0.3,0.06666666666666667
+Wine,18,RES,0.3,0.03333333333333333
+Wine,18,confidence,0.3,0.0
+Wine,18,confidence + RES,0.3,0.0
+Breast cancer,18,no review,0.3,0.03
+Breast cancer,18,conflict only,0.3,0.007142857142857143
+Breast cancer,18,stability only,0.3,0.02142857142857143
+Breast cancer,18,RES,0.3,0.007142857142857143
+Breast cancer,18,confidence,0.3,0.007142857142857143
+Breast cancer,18,confidence + RES,0.3,0.007142857142857143
+Digits,18,no review,0.3,0.0
+Digits,18,conflict only,0.3,0.0
+Digits,18,stability only,0.3,0.0
+Digits,18,RES,0.3,0.0
+Digits,18,confidence,0.3,0.0
+Digits,18,confidence + RES,0.3,0.0
+Iris,19,no review,0.3,0.02857142857142857
+Iris,19,conflict only,0.3,0.0
+Iris,19,stability only,0.3,0.0
+Iris,19,RES,0.3,0.0
+Iris,19,confidence,0.3,0.0
+Iris,19,confidence + RES,0.3,0.0
+Wine,19,no review,0.3,0.047619047619047616
+Wine,19,conflict only,0.3,0.0
+Wine,19,stability only,0.3,0.0
+Wine,19,RES,0.3,0.0
+Wine,19,confidence,0.3,0.0
+Wine,19,confidence + RES,0.3,0.0
+Breast cancer,19,no review,0.3,0.02
+Breast cancer,19,conflict only,0.3,0.0
+Breast cancer,19,stability only,0.3,0.02142857142857143
+Breast cancer,19,RES,0.3,0.0
+Breast cancer,19,confidence,0.3,0.0
+Breast cancer,19,confidence + RES,0.3,0.0
+Digits,19,no review,0.3,0.0
+Digits,19,conflict only,0.3,0.0
+Digits,19,stability only,0.3,0.0
+Digits,19,RES,0.3,0.0
+Digits,19,confidence,0.3,0.0
+Digits,19,confidence + RES,0.3,0.0
+Iris,20,no review,0.3,0.05714285714285714
+Iris,20,conflict only,0.3,0.0
+Iris,20,stability only,0.3,0.04
+Iris,20,RES,0.3,0.0
+Iris,20,confidence,0.3,0.0
+Iris,20,confidence + RES,0.3,0.0
+Wine,20,no review,0.3,0.047619047619047616
+Wine,20,conflict only,0.3,0.0
+Wine,20,stability only,0.3,0.03333333333333333
+Wine,20,RES,0.3,0.0
+Wine,20,confidence,0.3,0.0
+Wine,20,confidence + RES,0.3,0.0
+Breast cancer,20,no review,0.3,0.03
+Breast cancer,20,conflict only,0.3,0.007142857142857143
+Breast cancer,20,stability only,0.3,0.02142857142857143
+Breast cancer,20,RES,0.3,0.007142857142857143
+Breast cancer,20,confidence,0.3,0.007142857142857143
+Breast cancer,20,confidence + RES,0.3,0.007142857142857143
+Digits,20,no review,0.3,0.015625
+Digits,20,conflict only,0.3,0.0
+Digits,20,stability only,0.3,0.022222222222222223
+Digits,20,RES,0.3,0.0
+Digits,20,confidence,0.3,0.0
+Digits,20,confidence + RES,0.3,0.0
+Iris,21,no review,0.3,0.05714285714285714
+Iris,21,conflict only,0.3,0.0
+Iris,21,stability only,0.3,0.04
+Iris,21,RES,0.3,0.0
+Iris,21,confidence,0.3,0.0
+Iris,21,confidence + RES,0.3,0.0
+Wine,21,no review,0.3,0.047619047619047616
+Wine,21,conflict only,0.3,0.0
+Wine,21,stability only,0.3,0.0
+Wine,21,RES,0.3,0.0
+Wine,21,confidence,0.3,0.0
+Wine,21,confidence + RES,0.3,0.0
+Breast cancer,21,no review,0.3,0.005
+Breast cancer,21,conflict only,0.3,0.0
+Breast cancer,21,stability only,0.3,0.0
+Breast cancer,21,RES,0.3,0.0
+Breast cancer,21,confidence,0.3,0.0
+Breast cancer,21,confidence + RES,0.3,0.0
+Digits,21,no review,0.3,0.0
+Digits,21,conflict only,0.3,0.0
+Digits,21,stability only,0.3,0.0
+Digits,21,RES,0.3,0.0
+Digits,21,confidence,0.3,0.0
+Digits,21,confidence + RES,0.3,0.0
+Iris,22,no review,0.3,0.02857142857142857
+Iris,22,conflict only,0.3,0.0
+Iris,22,stability only,0.3,0.0
+Iris,22,RES,0.3,0.0
+Iris,22,confidence,0.3,0.0
+Iris,22,confidence + RES,0.3,0.0
+Wine,22,no review,0.3,0.047619047619047616
+Wine,22,conflict only,0.3,0.0
+Wine,22,stability only,0.3,0.0
+Wine,22,RES,0.3,0.0
+Wine,22,confidence,0.3,0.0
+Wine,22,confidence + RES,0.3,0.0
+Breast cancer,22,no review,0.3,0.06
+Breast cancer,22,conflict only,0.3,0.007142857142857143
+Breast cancer,22,stability only,0.3,0.03571428571428571
+Breast cancer,22,RES,0.3,0.007142857142857143
+Breast cancer,22,confidence,0.3,0.007142857142857143
+Breast cancer,22,confidence + RES,0.3,0.007142857142857143
+Digits,22,no review,0.3,0.0078125
+Digits,22,conflict only,0.3,0.0
+Digits,22,stability only,0.3,0.011111111111111112
+Digits,22,RES,0.3,0.0
+Digits,22,confidence,0.3,0.0
+Digits,22,confidence + RES,0.3,0.0
+Iris,23,no review,0.3,0.08571428571428572
+Iris,23,conflict only,0.3,0.0
+Iris,23,stability only,0.3,0.0
+Iris,23,RES,0.3,0.0
+Iris,23,confidence,0.3,0.0
+Iris,23,confidence + RES,0.3,0.0
+Wine,23,no review,0.3,0.0
+Wine,23,conflict only,0.3,0.0
+Wine,23,stability only,0.3,0.0
+Wine,23,RES,0.3,0.0
+Wine,23,confidence,0.3,0.0
+Wine,23,confidence + RES,0.3,0.0
+Breast cancer,23,no review,0.3,0.025
+Breast cancer,23,conflict only,0.3,0.0
+Breast cancer,23,stability only,0.3,0.014285714285714285
+Breast cancer,23,RES,0.3,0.0
+Breast cancer,23,confidence,0.3,0.0
+Breast cancer,23,confidence + RES,0.3,0.0
+Digits,23,no review,0.3,0.0
+Digits,23,conflict only,0.3,0.0
+Digits,23,stability only,0.3,0.0
+Digits,23,RES,0.3,0.0
+Digits,23,confidence,0.3,0.0
+Digits,23,confidence + RES,0.3,0.0
+Iris,24,no review,0.3,0.0
+Iris,24,conflict only,0.3,0.0
+Iris,24,stability only,0.3,0.0
+Iris,24,RES,0.3,0.0
+Iris,24,confidence,0.3,0.0
+Iris,24,confidence + RES,0.3,0.0
+Wine,24,no review,0.3,0.047619047619047616
+Wine,24,conflict only,0.3,0.0
+Wine,24,stability only,0.3,0.03333333333333333
+Wine,24,RES,0.3,0.0
+Wine,24,confidence,0.3,0.0
+Wine,24,confidence + RES,0.3,0.0
+Breast cancer,24,no review,0.3,0.02
+Breast cancer,24,conflict only,0.3,0.007142857142857143
+Breast cancer,24,stability only,0.3,0.014285714285714285
+Breast cancer,24,RES,0.3,0.007142857142857143
+Breast cancer,24,confidence,0.3,0.007142857142857143
+Breast cancer,24,confidence + RES,0.3,0.007142857142857143
+Digits,24,no review,0.3,0.0
+Digits,24,conflict only,0.3,0.0
+Digits,24,stability only,0.3,0.0
+Digits,24,RES,0.3,0.0
+Digits,24,confidence,0.3,0.0
+Digits,24,confidence + RES,0.3,0.0
+Iris,25,no review,0.3,0.02857142857142857
+Iris,25,conflict only,0.3,0.0
+Iris,25,stability only,0.3,0.0
+Iris,25,RES,0.3,0.0
+Iris,25,confidence,0.3,0.0
+Iris,25,confidence + RES,0.3,0.0
+Wine,25,no review,0.3,0.023809523809523808
+Wine,25,conflict only,0.3,0.03333333333333333
+Wine,25,stability only,0.3,0.0
+Wine,25,RES,0.3,0.0
+Wine,25,confidence,0.3,0.0
+Wine,25,confidence + RES,0.3,0.0
+Breast cancer,25,no review,0.3,0.02
+Breast cancer,25,conflict only,0.3,0.0
+Breast cancer,25,stability only,0.3,0.007142857142857143
+Breast cancer,25,RES,0.3,0.0
+Breast cancer,25,confidence,0.3,0.007142857142857143
+Breast cancer,25,confidence + RES,0.3,0.0
+Digits,25,no review,0.3,0.0234375
+Digits,25,conflict only,0.3,0.0
+Digits,25,stability only,0.3,0.022222222222222223
+Digits,25,RES,0.3,0.0
+Digits,25,confidence,0.3,0.0
+Digits,25,confidence + RES,0.3,0.0
+Iris,26,no review,0.3,0.02857142857142857
+Iris,26,conflict only,0.3,0.0
+Iris,26,stability only,0.3,0.0
+Iris,26,RES,0.3,0.0
+Iris,26,confidence,0.3,0.0
+Iris,26,confidence + RES,0.3,0.0
+Wine,26,no review,0.3,0.047619047619047616
+Wine,26,conflict only,0.3,0.03333333333333333
+Wine,26,stability only,0.3,0.0
+Wine,26,RES,0.3,0.03333333333333333
+Wine,26,confidence,0.3,0.0
+Wine,26,confidence + RES,0.3,0.0
+Breast cancer,26,no review,0.3,0.025
+Breast cancer,26,conflict only,0.3,0.007142857142857143
+Breast cancer,26,stability only,0.3,0.014285714285714285
+Breast cancer,26,RES,0.3,0.007142857142857143
+Breast cancer,26,confidence,0.3,0.007142857142857143
+Breast cancer,26,confidence + RES,0.3,0.007142857142857143
+Digits,26,no review,0.3,0.015625
+Digits,26,conflict only,0.3,0.0
+Digits,26,stability only,0.3,0.022222222222222223
+Digits,26,RES,0.3,0.0
+Digits,26,confidence,0.3,0.0
+Digits,26,confidence + RES,0.3,0.0
+Iris,27,no review,0.3,0.02857142857142857
+Iris,27,conflict only,0.3,0.0
+Iris,27,stability only,0.3,0.0
+Iris,27,RES,0.3,0.0
+Iris,27,confidence,0.3,0.0
+Iris,27,confidence + RES,0.3,0.0
+Wine,27,no review,0.3,0.023809523809523808
+Wine,27,conflict only,0.3,0.03333333333333333
+Wine,27,stability only,0.3,0.0
+Wine,27,RES,0.3,0.0
+Wine,27,confidence,0.3,0.0
+Wine,27,confidence + RES,0.3,0.0
+Breast cancer,27,no review,0.3,0.025
+Breast cancer,27,conflict only,0.3,0.007142857142857143
+Breast cancer,27,stability only,0.3,0.007142857142857143
+Breast cancer,27,RES,0.3,0.007142857142857143
+Breast cancer,27,confidence,0.3,0.007142857142857143
+Breast cancer,27,confidence + RES,0.3,0.007142857142857143
+Digits,27,no review,0.3,0.0
+Digits,27,conflict only,0.3,0.0
+Digits,27,stability only,0.3,0.0
+Digits,27,RES,0.3,0.0
+Digits,27,confidence,0.3,0.0
+Digits,27,confidence + RES,0.3,0.0
+Iris,28,no review,0.3,0.0
+Iris,28,conflict only,0.3,0.0
+Iris,28,stability only,0.3,0.0
+Iris,28,RES,0.3,0.0
+Iris,28,confidence,0.3,0.0
+Iris,28,confidence + RES,0.3,0.0
+Wine,28,no review,0.3,0.023809523809523808
+Wine,28,conflict only,0.3,0.03333333333333333
+Wine,28,stability only,0.3,0.0
+Wine,28,RES,0.3,0.03333333333333333
+Wine,28,confidence,0.3,0.0
+Wine,28,confidence + RES,0.3,0.0
+Breast cancer,28,no review,0.3,0.015
+Breast cancer,28,conflict only,0.3,0.0
+Breast cancer,28,stability only,0.3,0.014285714285714285
+Breast cancer,28,RES,0.3,0.007142857142857143
+Breast cancer,28,confidence,0.3,0.007142857142857143
+Breast cancer,28,confidence + RES,0.3,0.007142857142857143
+Digits,28,no review,0.3,0.015625
+Digits,28,conflict only,0.3,0.0
+Digits,28,stability only,0.3,0.011111111111111112
+Digits,28,RES,0.3,0.0
+Digits,28,confidence,0.3,0.0
+Digits,28,confidence + RES,0.3,0.0
+Iris,29,no review,0.3,0.08571428571428572
+Iris,29,conflict only,0.3,0.0
+Iris,29,stability only,0.3,0.0
+Iris,29,RES,0.3,0.0
+Iris,29,confidence,0.3,0.0
+Iris,29,confidence + RES,0.3,0.0
+Wine,29,no review,0.3,0.047619047619047616
+Wine,29,conflict only,0.3,0.03333333333333333
+Wine,29,stability only,0.3,0.03333333333333333
+Wine,29,RES,0.3,0.03333333333333333
+Wine,29,confidence,0.3,0.0
+Wine,29,confidence + RES,0.3,0.0
+Breast cancer,29,no review,0.3,0.02
+Breast cancer,29,conflict only,0.3,0.0
+Breast cancer,29,stability only,0.3,0.007142857142857143
+Breast cancer,29,RES,0.3,0.0
+Breast cancer,29,confidence,0.3,0.0
+Breast cancer,29,confidence + RES,0.3,0.0
+Digits,29,no review,0.3,0.0
+Digits,29,conflict only,0.3,0.0
+Digits,29,stability only,0.3,0.0
+Digits,29,RES,0.3,0.0
+Digits,29,confidence,0.3,0.0
+Digits,29,confidence + RES,0.3,0.0
+Iris,30,no review,0.3,0.08571428571428572
+Iris,30,conflict only,0.3,0.0
+Iris,30,stability only,0.3,0.08
+Iris,30,RES,0.3,0.0
+Iris,30,confidence,0.3,0.0
+Iris,30,confidence + RES,0.3,0.0
+Wine,30,no review,0.3,0.023809523809523808
+Wine,30,conflict only,0.3,0.0
+Wine,30,stability only,0.3,0.03333333333333333
+Wine,30,RES,0.3,0.0
+Wine,30,confidence,0.3,0.0
+Wine,30,confidence + RES,0.3,0.0
+Breast cancer,30,no review,0.3,0.03
+Breast cancer,30,conflict only,0.3,0.007142857142857143
+Breast cancer,30,stability only,0.3,0.03571428571428571
+Breast cancer,30,RES,0.3,0.007142857142857143
+Breast cancer,30,confidence,0.3,0.007142857142857143
+Breast cancer,30,confidence + RES,0.3,0.007142857142857143
+Digits,30,no review,0.3,0.0078125
+Digits,30,conflict only,0.3,0.0
+Digits,30,stability only,0.3,0.0
+Digits,30,RES,0.3,0.0
+Digits,30,confidence,0.3,0.0
+Digits,30,confidence + RES,0.3,0.0
+Iris,31,no review,0.3,0.02857142857142857
+Iris,31,conflict only,0.3,0.0
+Iris,31,stability only,0.3,0.0
+Iris,31,RES,0.3,0.0
+Iris,31,confidence,0.3,0.0
+Iris,31,confidence + RES,0.3,0.0
+Wine,31,no review,0.3,0.047619047619047616
+Wine,31,conflict only,0.3,0.03333333333333333
+Wine,31,stability only,0.3,0.03333333333333333
+Wine,31,RES,0.3,0.0
+Wine,31,confidence,0.3,0.0
+Wine,31,confidence + RES,0.3,0.0
+Breast cancer,31,no review,0.3,0.035
+Breast cancer,31,conflict only,0.3,0.0
+Breast cancer,31,stability only,0.3,0.014285714285714285
+Breast cancer,31,RES,0.3,0.0
+Breast cancer,31,confidence,0.3,0.0
+Breast cancer,31,confidence + RES,0.3,0.0
+Digits,31,no review,0.3,0.0078125
+Digits,31,conflict only,0.3,0.0
+Digits,31,stability only,0.3,0.011111111111111112
+Digits,31,RES,0.3,0.0
+Digits,31,confidence,0.3,0.0
+Digits,31,confidence + RES,0.3,0.0
+Iris,32,no review,0.3,0.0
+Iris,32,conflict only,0.3,0.0
+Iris,32,stability only,0.3,0.0
+Iris,32,RES,0.3,0.0
+Iris,32,confidence,0.3,0.0
+Iris,32,confidence + RES,0.3,0.0
+Wine,32,no review,0.3,0.07142857142857142
+Wine,32,conflict only,0.3,0.0
+Wine,32,stability only,0.3,0.03333333333333333
+Wine,32,RES,0.3,0.0
+Wine,32,confidence,0.3,0.0
+Wine,32,confidence + RES,0.3,0.0
+Breast cancer,32,no review,0.3,0.035
+Breast cancer,32,conflict only,0.3,0.0
+Breast cancer,32,stability only,0.3,0.007142857142857143
+Breast cancer,32,RES,0.3,0.0
+Breast cancer,32,confidence,0.3,0.0
+Breast cancer,32,confidence + RES,0.3,0.0
+Digits,32,no review,0.3,0.0
+Digits,32,conflict only,0.3,0.0
+Digits,32,stability only,0.3,0.0
+Digits,32,RES,0.3,0.0
+Digits,32,confidence,0.3,0.0
+Digits,32,confidence + RES,0.3,0.0
+Iris,33,no review,0.3,0.11428571428571428
+Iris,33,conflict only,0.3,0.0
+Iris,33,stability only,0.3,0.04
+Iris,33,RES,0.3,0.0
+Iris,33,confidence,0.3,0.0
+Iris,33,confidence + RES,0.3,0.0
+Wine,33,no review,0.3,0.023809523809523808
+Wine,33,conflict only,0.3,0.0
+Wine,33,stability only,0.3,0.03333333333333333
+Wine,33,RES,0.3,0.0
+Wine,33,confidence,0.3,0.0
+Wine,33,confidence + RES,0.3,0.0
+Breast cancer,33,no review,0.3,0.03
+Breast cancer,33,conflict only,0.3,0.0
+Breast cancer,33,stability only,0.3,0.007142857142857143
+Breast cancer,33,RES,0.3,0.0
+Breast cancer,33,confidence,0.3,0.0
+Breast cancer,33,confidence + RES,0.3,0.0
+Digits,33,no review,0.3,0.0
+Digits,33,conflict only,0.3,0.0
+Digits,33,stability only,0.3,0.0
+Digits,33,RES,0.3,0.0
+Digits,33,confidence,0.3,0.0
+Digits,33,confidence + RES,0.3,0.0
+Iris,34,no review,0.3,0.08571428571428572
+Iris,34,conflict only,0.3,0.0
+Iris,34,stability only,0.3,0.0
+Iris,34,RES,0.3,0.0
+Iris,34,confidence,0.3,0.0
+Iris,34,confidence + RES,0.3,0.0
+Wine,34,no review,0.3,0.047619047619047616
+Wine,34,conflict only,0.3,0.0
+Wine,34,stability only,0.3,0.03333333333333333
+Wine,34,RES,0.3,0.0
+Wine,34,confidence,0.3,0.0
+Wine,34,confidence + RES,0.3,0.0
+Breast cancer,34,no review,0.3,0.035
+Breast cancer,34,conflict only,0.3,0.0
+Breast cancer,34,stability only,0.3,0.007142857142857143
+Breast cancer,34,RES,0.3,0.0
+Breast cancer,34,confidence,0.3,0.0
+Breast cancer,34,confidence + RES,0.3,0.0
+Digits,34,no review,0.3,0.0
+Digits,34,conflict only,0.3,0.0
+Digits,34,stability only,0.3,0.0
+Digits,34,RES,0.3,0.0
+Digits,34,confidence,0.3,0.0
+Digits,34,confidence + RES,0.3,0.0
+Iris,35,no review,0.3,0.05714285714285714
+Iris,35,conflict only,0.3,0.0
+Iris,35,stability only,0.3,0.0
+Iris,35,RES,0.3,0.0
+Iris,35,confidence,0.3,0.0
+Iris,35,confidence + RES,0.3,0.0
+Wine,35,no review,0.3,0.0
+Wine,35,conflict only,0.3,0.0
+Wine,35,stability only,0.3,0.0
+Wine,35,RES,0.3,0.0
+Wine,35,confidence,0.3,0.0
+Wine,35,confidence + RES,0.3,0.0
+Breast cancer,35,no review,0.3,0.02
+Breast cancer,35,conflict only,0.3,0.0
+Breast cancer,35,stability only,0.3,0.014285714285714285
+Breast cancer,35,RES,0.3,0.0
+Breast cancer,35,confidence,0.3,0.0
+Breast cancer,35,confidence + RES,0.3,0.0
+Digits,35,no review,0.3,0.0234375
+Digits,35,conflict only,0.3,0.0
+Digits,35,stability only,0.3,0.022222222222222223
+Digits,35,RES,0.3,0.0
+Digits,35,confidence,0.3,0.0
+Digits,35,confidence + RES,0.3,0.0
+Iris,36,no review,0.3,0.11428571428571428
+Iris,36,conflict only,0.3,0.0
+Iris,36,stability only,0.3,0.0
+Iris,36,RES,0.3,0.0
+Iris,36,confidence,0.3,0.0
+Iris,36,confidence + RES,0.3,0.0
+Wine,36,no review,0.3,0.023809523809523808
+Wine,36,conflict only,0.3,0.0
+Wine,36,stability only,0.3,0.0
+Wine,36,RES,0.3,0.0
+Wine,36,confidence,0.3,0.0
+Wine,36,confidence + RES,0.3,0.0
+Breast cancer,36,no review,0.3,0.025
+Breast cancer,36,conflict only,0.3,0.0
+Breast cancer,36,stability only,0.3,0.014285714285714285
+Breast cancer,36,RES,0.3,0.0
+Breast cancer,36,confidence,0.3,0.0
+Breast cancer,36,confidence + RES,0.3,0.0
+Digits,36,no review,0.3,0.0
+Digits,36,conflict only,0.3,0.0
+Digits,36,stability only,0.3,0.0
+Digits,36,RES,0.3,0.0
+Digits,36,confidence,0.3,0.0
+Digits,36,confidence + RES,0.3,0.0
+Iris,37,no review,0.3,0.02857142857142857
+Iris,37,conflict only,0.3,0.0
+Iris,37,stability only,0.3,0.0
+Iris,37,RES,0.3,0.0
+Iris,37,confidence,0.3,0.0
+Iris,37,confidence + RES,0.3,0.0
+Wine,37,no review,0.3,0.023809523809523808
+Wine,37,conflict only,0.3,0.03333333333333333
+Wine,37,stability only,0.3,0.0
+Wine,37,RES,0.3,0.03333333333333333
+Wine,37,confidence,0.3,0.0
+Wine,37,confidence + RES,0.3,0.0
+Breast cancer,37,no review,0.3,0.035
+Breast cancer,37,conflict only,0.3,0.0
+Breast cancer,37,stability only,0.3,0.014285714285714285
+Breast cancer,37,RES,0.3,0.0
+Breast cancer,37,confidence,0.3,0.0
+Breast cancer,37,confidence + RES,0.3,0.0
+Digits,37,no review,0.3,0.0078125
+Digits,37,conflict only,0.3,0.0
+Digits,37,stability only,0.3,0.011111111111111112
+Digits,37,RES,0.3,0.0
+Digits,37,confidence,0.3,0.0
+Digits,37,confidence + RES,0.3,0.0
+Iris,38,no review,0.3,0.05714285714285714
+Iris,38,conflict only,0.3,0.0
+Iris,38,stability only,0.3,0.0
+Iris,38,RES,0.3,0.0
+Iris,38,confidence,0.3,0.0
+Iris,38,confidence + RES,0.3,0.0
+Wine,38,no review,0.3,0.023809523809523808
+Wine,38,conflict only,0.3,0.0
+Wine,38,stability only,0.3,0.0
+Wine,38,RES,0.3,0.0
+Wine,38,confidence,0.3,0.0
+Wine,38,confidence + RES,0.3,0.0
+Breast cancer,38,no review,0.3,0.02
+Breast cancer,38,conflict only,0.3,0.0
+Breast cancer,38,stability only,0.3,0.02142857142857143
+Breast cancer,38,RES,0.3,0.0
+Breast cancer,38,confidence,0.3,0.0
+Breast cancer,38,confidence + RES,0.3,0.0
+Digits,38,no review,0.3,0.015625
+Digits,38,conflict only,0.3,0.0
+Digits,38,stability only,0.3,0.022222222222222223
+Digits,38,RES,0.3,0.0
+Digits,38,confidence,0.3,0.0
+Digits,38,confidence + RES,0.3,0.0
+Iris,39,no review,0.3,0.08571428571428572
+Iris,39,conflict only,0.3,0.0
+Iris,39,stability only,0.3,0.04
+Iris,39,RES,0.3,0.0
+Iris,39,confidence,0.3,0.0
+Iris,39,confidence + RES,0.3,0.0
+Wine,39,no review,0.3,0.023809523809523808
+Wine,39,conflict only,0.3,0.03333333333333333
+Wine,39,stability only,0.3,0.0
+Wine,39,RES,0.3,0.03333333333333333
+Wine,39,confidence,0.3,0.0
+Wine,39,confidence + RES,0.3,0.03333333333333333
+Breast cancer,39,no review,0.3,0.02
+Breast cancer,39,conflict only,0.3,0.0
+Breast cancer,39,stability only,0.3,0.014285714285714285
+Breast cancer,39,RES,0.3,0.007142857142857143
+Breast cancer,39,confidence,0.3,0.007142857142857143
+Breast cancer,39,confidence + RES,0.3,0.007142857142857143
+Digits,39,no review,0.3,0.0
+Digits,39,conflict only,0.3,0.0
+Digits,39,stability only,0.3,0.0
+Digits,39,RES,0.3,0.0
+Digits,39,confidence,0.3,0.0
+Digits,39,confidence + RES,0.3,0.0
+Iris,40,no review,0.3,0.08571428571428572
+Iris,40,conflict only,0.3,0.0
+Iris,40,stability only,0.3,0.0
+Iris,40,RES,0.3,0.0
+Iris,40,confidence,0.3,0.0
+Iris,40,confidence + RES,0.3,0.0
+Wine,40,no review,0.3,0.0
+Wine,40,conflict only,0.3,0.0
+Wine,40,stability only,0.3,0.0
+Wine,40,RES,0.3,0.0
+Wine,40,confidence,0.3,0.0
+Wine,40,confidence + RES,0.3,0.0
+Breast cancer,40,no review,0.3,0.01
+Breast cancer,40,conflict only,0.3,0.0
+Breast cancer,40,stability only,0.3,0.0
+Breast cancer,40,RES,0.3,0.0
+Breast cancer,40,confidence,0.3,0.0
+Breast cancer,40,confidence + RES,0.3,0.0
+Digits,40,no review,0.3,0.0
+Digits,40,conflict only,0.3,0.0
+Digits,40,stability only,0.3,0.0
+Digits,40,RES,0.3,0.0
+Digits,40,confidence,0.3,0.0
+Digits,40,confidence + RES,0.3,0.0
+Iris,41,no review,0.3,0.02857142857142857
+Iris,41,conflict only,0.3,0.0
+Iris,41,stability only,0.3,0.0
+Iris,41,RES,0.3,0.0
+Iris,41,confidence,0.3,0.0
+Iris,41,confidence + RES,0.3,0.0
+Wine,41,no review,0.3,0.023809523809523808
+Wine,41,conflict only,0.3,0.03333333333333333
+Wine,41,stability only,0.3,0.0
+Wine,41,RES,0.3,0.03333333333333333
+Wine,41,confidence,0.3,0.0
+Wine,41,confidence + RES,0.3,0.0
+Breast cancer,41,no review,0.3,0.015
+Breast cancer,41,conflict only,0.3,0.0
+Breast cancer,41,stability only,0.3,0.007142857142857143
+Breast cancer,41,RES,0.3,0.0
+Breast cancer,41,confidence,0.3,0.007142857142857143
+Breast cancer,41,confidence + RES,0.3,0.0
+Digits,41,no review,0.3,0.0
+Digits,41,conflict only,0.3,0.0
+Digits,41,stability only,0.3,0.0
+Digits,41,RES,0.3,0.0
+Digits,41,confidence,0.3,0.0
+Digits,41,confidence + RES,0.3,0.0
+Iris,42,no review,0.3,0.05714285714285714
+Iris,42,conflict only,0.3,0.0
+Iris,42,stability only,0.3,0.0
+Iris,42,RES,0.3,0.0
+Iris,42,confidence,0.3,0.0
+Iris,42,confidence + RES,0.3,0.0
+Wine,42,no review,0.3,0.047619047619047616
+Wine,42,conflict only,0.3,0.03333333333333333
+Wine,42,stability only,0.3,0.03333333333333333
+Wine,42,RES,0.3,0.03333333333333333
+Wine,42,confidence,0.3,0.0
+Wine,42,confidence + RES,0.3,0.0
+Breast cancer,42,no review,0.3,0.025
+Breast cancer,42,conflict only,0.3,0.0
+Breast cancer,42,stability only,0.3,0.007142857142857143
+Breast cancer,42,RES,0.3,0.0
+Breast cancer,42,confidence,0.3,0.0
+Breast cancer,42,confidence + RES,0.3,0.0
+Digits,42,no review,0.3,0.0078125
+Digits,42,conflict only,0.3,0.0
+Digits,42,stability only,0.3,0.011111111111111112
+Digits,42,RES,0.3,0.0
+Digits,42,confidence,0.3,0.0
+Digits,42,confidence + RES,0.3,0.0
+Iris,43,no review,0.3,0.11428571428571428
+Iris,43,conflict only,0.3,0.04
+Iris,43,stability only,0.3,0.04
+Iris,43,RES,0.3,0.0
+Iris,43,confidence,0.3,0.0
+Iris,43,confidence + RES,0.3,0.0
+Wine,43,no review,0.3,0.0
+Wine,43,conflict only,0.3,0.0
+Wine,43,stability only,0.3,0.0
+Wine,43,RES,0.3,0.0
+Wine,43,confidence,0.3,0.0
+Wine,43,confidence + RES,0.3,0.0
+Breast cancer,43,no review,0.3,0.025
+Breast cancer,43,conflict only,0.3,0.007142857142857143
+Breast cancer,43,stability only,0.3,0.02142857142857143
+Breast cancer,43,RES,0.3,0.007142857142857143
+Breast cancer,43,confidence,0.3,0.007142857142857143
+Breast cancer,43,confidence + RES,0.3,0.007142857142857143
+Digits,43,no review,0.3,0.0078125
+Digits,43,conflict only,0.3,0.0
+Digits,43,stability only,0.3,0.011111111111111112
+Digits,43,RES,0.3,0.0
+Digits,43,confidence,0.3,0.0
+Digits,43,confidence + RES,0.3,0.0
+Iris,44,no review,0.3,0.02857142857142857
+Iris,44,conflict only,0.3,0.0
+Iris,44,stability only,0.3,0.0
+Iris,44,RES,0.3,0.0
+Iris,44,confidence,0.3,0.0
+Iris,44,confidence + RES,0.3,0.0
+Wine,44,no review,0.3,0.0
+Wine,44,conflict only,0.3,0.0
+Wine,44,stability only,0.3,0.0
+Wine,44,RES,0.3,0.0
+Wine,44,confidence,0.3,0.0
+Wine,44,confidence + RES,0.3,0.0
+Breast cancer,44,no review,0.3,0.02
+Breast cancer,44,conflict only,0.3,0.0
+Breast cancer,44,stability only,0.3,0.014285714285714285
+Breast cancer,44,RES,0.3,0.0
+Breast cancer,44,confidence,0.3,0.0
+Breast cancer,44,confidence + RES,0.3,0.0
+Digits,44,no review,0.3,0.0
+Digits,44,conflict only,0.3,0.0
+Digits,44,stability only,0.3,0.0
+Digits,44,RES,0.3,0.0
+Digits,44,confidence,0.3,0.0
+Digits,44,confidence + RES,0.3,0.0
+Iris,45,no review,0.3,0.02857142857142857
+Iris,45,conflict only,0.3,0.0
+Iris,45,stability only,0.3,0.0
+Iris,45,RES,0.3,0.0
+Iris,45,confidence,0.3,0.0
+Iris,45,confidence + RES,0.3,0.0
+Wine,45,no review,0.3,0.023809523809523808
+Wine,45,conflict only,0.3,0.03333333333333333
+Wine,45,stability only,0.3,0.0
+Wine,45,RES,0.3,0.0
+Wine,45,confidence,0.3,0.0
+Wine,45,confidence + RES,0.3,0.0
+Breast cancer,45,no review,0.3,0.02
+Breast cancer,45,conflict only,0.3,0.0
+Breast cancer,45,stability only,0.3,0.014285714285714285
+Breast cancer,45,RES,0.3,0.0
+Breast cancer,45,confidence,0.3,0.007142857142857143
+Breast cancer,45,confidence + RES,0.3,0.0
+Digits,45,no review,0.3,0.0
+Digits,45,conflict only,0.3,0.0
+Digits,45,stability only,0.3,0.0
+Digits,45,RES,0.3,0.0
+Digits,45,confidence,0.3,0.0
+Digits,45,confidence + RES,0.3,0.0
+Iris,46,no review,0.3,0.08571428571428572
+Iris,46,conflict only,0.3,0.0
+Iris,46,stability only,0.3,0.04
+Iris,46,RES,0.3,0.0
+Iris,46,confidence,0.3,0.0
+Iris,46,confidence + RES,0.3,0.0
+Wine,46,no review,0.3,0.0
+Wine,46,conflict only,0.3,0.0
+Wine,46,stability only,0.3,0.0
+Wine,46,RES,0.3,0.0
+Wine,46,confidence,0.3,0.0
+Wine,46,confidence + RES,0.3,0.0
+Breast cancer,46,no review,0.3,0.03
+Breast cancer,46,conflict only,0.3,0.0
+Breast cancer,46,stability only,0.3,0.02142857142857143
+Breast cancer,46,RES,0.3,0.0
+Breast cancer,46,confidence,0.3,0.0
+Breast cancer,46,confidence + RES,0.3,0.0
+Digits,46,no review,0.3,0.0078125
+Digits,46,conflict only,0.3,0.0
+Digits,46,stability only,0.3,0.0
+Digits,46,RES,0.3,0.0
+Digits,46,confidence,0.3,0.0
+Digits,46,confidence + RES,0.3,0.0
+Iris,47,no review,0.3,0.05714285714285714
+Iris,47,conflict only,0.3,0.0
+Iris,47,stability only,0.3,0.04
+Iris,47,RES,0.3,0.0
+Iris,47,confidence,0.3,0.0
+Iris,47,confidence + RES,0.3,0.0
+Wine,47,no review,0.3,0.023809523809523808
+Wine,47,conflict only,0.3,0.0
+Wine,47,stability only,0.3,0.0
+Wine,47,RES,0.3,0.0
+Wine,47,confidence,0.3,0.0
+Wine,47,confidence + RES,0.3,0.0
+Breast cancer,47,no review,0.3,0.035
+Breast cancer,47,conflict only,0.3,0.007142857142857143
+Breast cancer,47,stability only,0.3,0.03571428571428571
+Breast cancer,47,RES,0.3,0.007142857142857143
+Breast cancer,47,confidence,0.3,0.007142857142857143
+Breast cancer,47,confidence + RES,0.3,0.007142857142857143
+Digits,47,no review,0.3,0.0078125
+Digits,47,conflict only,0.3,0.0
+Digits,47,stability only,0.3,0.011111111111111112
+Digits,47,RES,0.3,0.0
+Digits,47,confidence,0.3,0.0
+Digits,47,confidence + RES,0.3,0.0
+Iris,48,no review,0.3,0.02857142857142857
+Iris,48,conflict only,0.3,0.0
+Iris,48,stability only,0.3,0.0
+Iris,48,RES,0.3,0.0
+Iris,48,confidence,0.3,0.0
+Iris,48,confidence + RES,0.3,0.0
+Wine,48,no review,0.3,0.0
+Wine,48,conflict only,0.3,0.0
+Wine,48,stability only,0.3,0.0
+Wine,48,RES,0.3,0.0
+Wine,48,confidence,0.3,0.0
+Wine,48,confidence + RES,0.3,0.0
+Breast cancer,48,no review,0.3,0.025
+Breast cancer,48,conflict only,0.3,0.0
+Breast cancer,48,stability only,0.3,0.007142857142857143
+Breast cancer,48,RES,0.3,0.0
+Breast cancer,48,confidence,0.3,0.0
+Breast cancer,48,confidence + RES,0.3,0.0
+Digits,48,no review,0.3,0.0078125
+Digits,48,conflict only,0.3,0.0
+Digits,48,stability only,0.3,0.011111111111111112
+Digits,48,RES,0.3,0.0
+Digits,48,confidence,0.3,0.0
+Digits,48,confidence + RES,0.3,0.0
+Iris,49,no review,0.3,0.02857142857142857
+Iris,49,conflict only,0.3,0.0
+Iris,49,stability only,0.3,0.0
+Iris,49,RES,0.3,0.0
+Iris,49,confidence,0.3,0.0
+Iris,49,confidence + RES,0.3,0.0
+Wine,49,no review,0.3,0.0
+Wine,49,conflict only,0.3,0.0
+Wine,49,stability only,0.3,0.0
+Wine,49,RES,0.3,0.0
+Wine,49,confidence,0.3,0.0
+Wine,49,confidence + RES,0.3,0.0
+Breast cancer,49,no review,0.3,0.035
+Breast cancer,49,conflict only,0.3,0.0
+Breast cancer,49,stability only,0.3,0.02142857142857143
+Breast cancer,49,RES,0.3,0.0
+Breast cancer,49,confidence,0.3,0.0
+Breast cancer,49,confidence + RES,0.3,0.0
+Digits,49,no review,0.3,0.0078125
+Digits,49,conflict only,0.3,0.0
+Digits,49,stability only,0.3,0.011111111111111112
+Digits,49,RES,0.3,0.0
+Digits,49,confidence,0.3,0.0
+Digits,49,confidence + RES,0.3,0.0

@@ -1,0 +1,10 @@
+metric,value
+full_rows,581012
+working_sample_rows,120000
+test_error,0.24854761904761905
+low_conflict_error,0.09552380952380952
+high_conflict_error,0.40904761904761905
+high_res_error,0.09428571428571429
+low_res_error,0.40914285714285714
+mean_conflict,0.7299476861953735
+mean_res,0.26413489070770657

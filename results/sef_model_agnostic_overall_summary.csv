@@ -1,0 +1,8 @@
+metric,value
+test_error,0.037142857142857144
+low_conflict_error,0.00431125992063492
+high_conflict_error,0.0982535892926518
+high_res_error,0.003950396825396826
+low_res_error,0.09899538222194472
+sef_triage_error_30,0.013393849206349206
+confidence_triage_error_30,0.004116071428571429

@@ -77,7 +77,7 @@ SEF therefore reports five quantities:
 \item a reliable evidence score.
 \end{enumerate}
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Main SEF quantities. The table is included to keep the notation stable across the paper.}
 \label{tab:sef-notation}
@@ -335,7 +335,6 @@ predicts error. It proves only that conflict can contain information that is
 absent from the net-score magnitude. The next theorem states when this becomes
 a statement about reported confidence.
 
-\pagebreak
 \begin{theorem}[General and decision-aligned identification boundary]
 Treat $N$, $M$, and $C$ as random variables over cases. Assume
 $\varepsilon=0$ and $M>0$ almost surely, and let $Q$ be any reported
@@ -455,7 +454,7 @@ separately.
 
 We checked both the positive and negative sides of these results in a controlled simulation. Confidence takes twelve discrete levels, so the base error-risk model can estimate a separate error rate at every confidence level. In the identified-mass scenario, evidence mass is fixed within each level. Conflict is then a deterministic function of confidence, and error depends only on confidence. In the hidden-mass scenario, evidence mass varies within each level and error also depends on conflict. We repeat each scenario 50 times with 6,000 cases and use five-fold cross-fitting.
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/figure21_identification_stress_test.png}
 \caption{Stress test of the identification boundary. When evidence mass is determined by confidence, conditional conflict variance is zero and adding conflict gives essentially no cross-fitted Brier or error-AUC gain. When evidence mass varies within confidence levels and loss changes with conflict, both gains become positive.}
@@ -892,14 +891,14 @@ This does not say that every reliable flag is correct in a scientific sense. It 
 
 We also check the screen empirically. On each standard benchmark, we split the data into training, calibration, and test parts. The training set fits the prediction model. The calibration set sets the conformal threshold for evidence unreliability at $\alpha=0.10$. The test set then shows which cases are accepted automatically and which cases are flagged.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Empirical conformal-screen validation across 50 random splits. The conformal rule controls the fraction accepted by the evidence-unreliability threshold, while the error columns show whether flagged cases are actually riskier.}
 \label{tab:conformal-screen}
 \resizebox{\textwidth}{!}{\input{results/sef_conformal_screen_table.tex}}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/figure15_conformal_screen_validation.png}
 \caption{Empirical conformal-screen validation. Flagged cases have much higher error than accepted cases on Breast Cancer, Digits, and Iris. Wine is the exception in this small benchmark, which is why the screen should be calibrated and checked for each application.}
@@ -937,28 +936,28 @@ E_j(x)=\beta_j(x_j-\bar{x}_j).
 \]
 We then compute support, opposition, conflict, perturbation stability, and the reliable evidence score. Stability is estimated by perturbing the coefficient vector and reference baseline 150 times.
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.82\textwidth]{figures/figure1_evidence_flow_map.png}
 \caption{SEF evidence map. Each point is one case. The horizontal axis shows supporting evidence and the vertical axis shows opposing evidence. Points near the diagonal have high conflict because support and opposition are both strong.}
 \label{fig:evidence-map}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.82\textwidth]{figures/figure2_confidence_vs_conflict.png}
 \caption{Model confidence does not remove evidence conflict. Some cases have high prediction confidence and high SEF conflict at the same time. These are cases where the model score is decisive, but the evidence is internally mixed.}
 \label{fig:confidence-conflict}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.82\textwidth]{figures/figure3_conflict_error_curve.png}
 \caption{Prediction error rises as SEF conflict increases. In this run, the overall error rate is $0.162$, the low-conflict error rate is $0.062$, and the high-conflict error rate is $0.358$.}
 \label{fig:conflict-error}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.82\textwidth]{figures/figure4_single_case_signed_evidence.png}
 \caption{A single high-conflict case. The prediction is formed from signed evidence terms that push in both directions. SEF makes this internal opposition visible.}
@@ -981,28 +980,28 @@ E_j(x)=\widehat{\beta}_j(x_j-\bar{x}_j),
 \]
 where variables are standardized using the training data. Stability is estimated by bootstrap refitting the full preprocessing and logistic model. The purpose of the benchmark is not to claim that logistic regression is the best possible predictor. The purpose is to test whether SEF conflict and SEF reliability identify riskier predictions on familiar data.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Repeated standard benchmark results over 50 stratified train-test splits. Values are mean $\pm$ approximate 95\% confidence intervals across splits. Low-conflict and high-conflict refer to the bottom and top quartiles of SEF conflict. High-RES and low-RES refer to the top and bottom quartiles of the reliable evidence score. Success is the fraction of splits where high-conflict cases have higher error than low-conflict cases.}
 \label{tab:standard-benchmarks}
 \resizebox{\textwidth}{!}{\input{results/sef_standard_benchmarks_table.tex}}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/figure5_standard_conflict_benchmarks.png}
 \caption{Implementation sanity checks on clean standard data sets. The near-zero low-conflict errors are ceiling effects and should not be read as strong evidence of general risk separation.}
 \label{fig:standard-conflict}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/figure6_standard_res_benchmarks.png}
 \caption{Repeated standard benchmark data sets. The reliable evidence score separates safer cases from less reliable cases on average across 50 splits.}
 \label{fig:standard-res}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/figure7_triage_curve.png}
 \caption{Review triage across the repeated standard benchmark tasks. Cases are ranked by SEF risk, confidence risk, a combined confidence-plus-SEF score, or a learned reject baseline.}
@@ -1015,7 +1014,7 @@ The reliable evidence score gives a similar pattern. These results should still 
 
 Figure~\ref{fig:triage-curve} shows a more operational view. If the analyst sends the highest-risk cases to review and accepts the remaining cases automatically, accepted-case error drops as the review budget grows. The figure also makes an important point: on these clean data sets, confidence is a very strong triage rule. SEF is therefore best read as an evidence audit layer, not as a promise to beat confidence in every clean benchmark.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Selective-review comparison at a fixed 30\% review budget across 50 splits. Lower values are better. The learned reject baseline is trained on a held-out part of the training data to predict whether the base classifier will make a mistake.}
 \label{tab:selective-baseline}
@@ -1036,7 +1035,7 @@ E_j(x)=\widehat{\beta}_j(x_j-\bar{x}_j),
 \]
 and SEF stability is estimated by refitting the preprocessing and model on bootstrap subsamples.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Covertype benchmark with 95\% nonparametric bootstrap confidence intervals computed on the held-out test predictions.}
 \label{tab:covtype-ci}
@@ -1045,7 +1044,7 @@ and SEF stability is estimated by refitting the preprocessing and model on boots
 
 The large-data result is consistent with the smaller benchmarks. The overall test error is $0.249$ with a 95\% bootstrap interval of $[0.245,0.253]$. The low-conflict quartile has error $0.096$ with interval $[0.090,0.101]$, while the high-conflict quartile has error $0.409$ with interval $[0.399,0.418]$. The highest-RES quartile has error $0.094$, while the lowest-RES quartile has error $0.409$. The intervals are narrow and well separated. Thus, on this large real data set, SEF separates cases with clean, stable evidence from cases with more fragile evidence.
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/figure8_covtype_large_triage.png}
 \caption{Large Covertype benchmark. The full data source has $581{,}012$ rows; this experiment uses a stratified working sample of $120{,}000$ rows. Sending the highest SEF-risk cases to review steadily lowers accepted-case error.}
@@ -1060,14 +1059,14 @@ The triage curve in Figure~\ref{fig:covtype-triage} gives the operational view. 
 
 The multi-class theorem should be checked on real multi-class predictions, not left as a formal extension. We therefore evaluate pairwise SEF using the predicted class and its strongest rival. The evidence terms come from the corresponding pairwise score gap of a multinomial logistic model. We use full three-class Iris, full three-class Wine, ten-class Digits, and seven-class Covertype. Iris, Wine, and Digits use 30 stratified splits. The larger Covertype experiment uses five stratified splits of a $97{,}950$-row working sample.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Multi-class SEF validation. HC denotes the most confident half of predictions. Success is the fraction of splits where high-conflict confident cases have higher error than low-conflict confident cases. Hybrid review combines confidence risk and SEF conflict at a 30\% review budget.}
 \label{tab:multiclass}
 \resizebox{\textwidth}{!}{\input{results/sef_multiclass_benchmark_table.tex}}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.90\textwidth]{figures/figure17_multiclass_benchmark.png}
 \caption{Multi-class evidence conflict inside predictions that already look confident. Covertype gives the clearest nontrivial test because the confident subset still contains enough errors to compare.}
@@ -1090,14 +1089,14 @@ E_j(x)=f(x)-f(x_{-j},\widetilde{x}_j),
 \]
 where $\widetilde{x}_j$ is the training median of feature $j$ and $f(x)$ is the fitted model logit. This construction does not use model coefficients and can be applied to any classifier with predicted probabilities.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Model-agnostic SEF robustness across 20 seeds. Values are unweighted means over repeated train-test splits within each data set and model class. The SEF evidence terms are computed by feature replacement, not by model coefficients.}
 \label{tab:model-agnostic}
 \resizebox{\textwidth}{!}{\input{results/sef_model_agnostic_robustness_table.tex}}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/figure9_model_agnostic_robustness.png}
 \caption{Model-agnostic robustness across four standard data sets, two non-linear black-box model classes, and 20 random splits. High-conflict predictions have higher error than low-conflict predictions, even when SEF uses only feature-replacement contrasts.}
@@ -1114,14 +1113,14 @@ This experiment also gives a useful caution. On these clean benchmark tasks, ord
 
 We next ask which part of SEF drives the review-triage gains. On the standard benchmark tasks, we compare six review rules at a fixed $30\%$ review budget: no review, conflict only, stability only, the full reliable evidence score, confidence only, and an equal-weighted confidence-plus-RES score. We repeat all four tasks over 50 train-test splits, giving 200 fitted prediction problems per review rule.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Ablation study at a $30\%$ review budget over 200 fitted prediction problems. Values are mean accepted-case error $\pm$ approximate 95\% confidence intervals.}
 \label{tab:ablation}
 \input{results/sef_ablation_table.tex}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/figure11_ablation_study.png}
 \caption{Repeated SEF ablation study. Conflict alone and the full reliable evidence score reduce accepted-case error relative to no review. Confidence remains very strong on these clean benchmark tasks.}
@@ -1138,14 +1137,14 @@ A natural concern is that SEF may only rediscover ordinary model confidence. We 
 
 The base learner is logistic regression. SEF evidence is computed from the fitted logit, so this stress test does not give SEF information that is hidden from the model. We first select the $40\%$ most confident predictions. Inside that already-confident group, we compare the lowest and highest quartiles of SEF conflict.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Confidence-masked conflict stress test. Even among predictions that already look confident, high SEF conflict marks a riskier subset.}
 \label{tab:confidence-masking}
 \input{results/sef_confidence_masking_table.tex}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.90\textwidth]{figures/figure12_confidence_masking_stress_test.png}
 \caption{Confidence-masked conflict stress test. Left: among high-confidence predictions, the high-conflict quartile has higher error than the low-conflict quartile. Right: when triage is restricted to high-confidence predictions, confidence remains a strong baseline, while combining confidence with SEF gives the lowest accepted-case error in this run.}
@@ -1170,14 +1169,14 @@ Among predictions that already look confident, does SEF conflict still separate 
 
 For each data set, we run 50 stratified train-test splits. The base model is a balanced logistic regression with standard preprocessing. We first keep the top half of test predictions by model confidence. Inside that already-confident group, we compare the lowest and highest quartiles of SEF conflict.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Healthcare benchmark beyond confidence. Within high-confidence predictions, high SEF conflict has higher error than low SEF conflict across all three real data sets. Split success is the fraction of 50 train-test splits where the high-conflict error exceeds the low-conflict error.}
 \label{tab:healthcare-beyond-confidence}
 \resizebox{\textwidth}{!}{\input{results/sef_healthcare_beyond_confidence_table.tex}}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.90\textwidth]{figures/figure13_healthcare_beyond_confidence.png}
 \caption{Healthcare benchmarks beyond confidence. After restricting to predictions that already look confident, SEF conflict still separates lower-risk and higher-risk subsets.}
@@ -1196,14 +1195,14 @@ A reviewer may ask whether SEF conflict is just another name for attribution ent
 
 To test this directly, we compare four ranking scores on the healthcare benchmark suite: SEF conflict, attribution entropy, a Gini-style attribution spread score, and low model confidence. Each score is evaluated inside the high-confidence group used in the previous section. For each method, we report the error rate among the top-risk quartile and the AUC for ranking errors.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Comparison with attribution entropy and Gini-style attribution spread. Values are averaged over 50 train-test splits and are computed only within predictions that already look confident. Higher top-quartile error and higher error AUC mean the score is better at ranking risky cases.}
 \label{tab:entropy-comparison}
 \resizebox{\textwidth}{!}{\input{results/sef_entropy_comparison_table.tex}}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.90\textwidth]{figures/figure14_entropy_comparison.png}
 \caption{SEF conflict compared with attribution entropy, attribution Gini spread, and low confidence. SEF conflict is not a monotone copy of attribution entropy. It is especially stronger than entropy and Gini spread on the diabetes and heart-disease tasks.}
@@ -1220,7 +1219,7 @@ The rank correlations also show that SEF is not just entropy in disguise. The av
 
 The earlier experiments show several settings where SEF conflict separates risk beyond confidence. A serious method also needs a test that can fail. We therefore ran a held-out stress test on three public OpenML data sets that were not used to shape the original examples: German Credit, Bank Marketing, and Default of Credit Card Clients. Each experiment uses 25 stratified train-test splits and the same balanced logistic-model evidence construction used in the healthcare study.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{External finance and credit-risk stress test over 25 splits. The comparison is restricted to the most confident half of predictions. Success is the fraction of splits where the high-conflict quartile has higher error than the low-conflict quartile.}
 \label{tab:finance-scope}
@@ -1237,14 +1236,14 @@ The earlier quartile comparisons ask whether high-conflict and low-conflict grou
 
 For the balanced logistic models used here, the evidence terms $(z_j-\bar z_j)\widehat\beta_j$ are the exact interventional linear-SHAP contributions on the logit scale under the empirical mean reference. This makes the entropy comparison a SHAP-based comparison for these models. It does not claim conditional-SHAP validity when transformed features are dependent.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{ScopeGate analysis on held-out high-confidence predictions. Base AUC cross-fits error risk from low confidence and attribution entropy; $+$SEF AUC also includes conflict. Gap is high-conflict minus low-conflict error inside the ScopeGate cross-fitting split, so it need not equal the simpler quartile gap reported in earlier benchmark tables. Eligible/pass reports the fraction of splits meeting the information rule and, among eligible splits, the fraction passing the one-sided positive-association diagnostic. Time excludes model fitting and bootstrap stability.}
 \label{tab:scope-diagnostic}
 \resizebox{\textwidth}{!}{\input{results/sef_scope_diagnostic_table.tex}}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.94\textwidth]{figures/figure18_scope_diagnostic.png}
 \caption{Left: cross-fitted error-ranking gain after adding SEF conflict to confidence and attribution entropy. Right: the finite-sample positive-direction diagnostic. Red finance bars show why incremental information and review direction must be treated as separate questions.}
@@ -1263,14 +1262,14 @@ The ScopeGate result should not rest only on the data sets used above. We theref
 
 The replication uses the same pipeline as ScopeGate. For each data set, we run ten stratified train-test splits. Within the most confident half of held-out predictions, the base error-risk model uses low confidence and attribution entropy. The augmented model adds SEF conflict. The deployment diagnostic again asks a separate question: whether higher conflict is positively associated with observed error strongly enough to justify high-conflict review.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Independent external replication on ten additional public OpenML data sets. Base AUC cross-fits error risk from low confidence and attribution entropy; $+$SEF AUC also includes conflict. Gap is high-conflict minus low-conflict error. Eligible/pass has the same meaning as in Table~\ref{tab:scope-diagnostic}.}
 \label{tab:external-replication}
 \resizebox{\textwidth}{!}{\input{results/sef_external_replication_table.tex}}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/figure19_external_replication.png}
 \caption{Independent external replication. Left: incremental error-ranking value from adding SEF conflict after confidence and attribution entropy. Right: direction of the conflict-risk relation. The two panels show why information value and safe review direction are different questions.}
@@ -1285,14 +1284,14 @@ This external replication moves the method from a set of examples to a broader e
 
 The external suite also gives a stronger test of whether SEF is merely attribution entropy under another name. Table~\ref{tab:external-entropy} compares the two scores, Gini spread, and low confidence inside the same held-out high-confidence groups. Figure~\ref{fig:external-entropy} shows both the error-ranking difference and the rank correlation between SEF conflict and entropy.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Independent comparison with attribution entropy on ten external data sets. Error AUC measures how well each score ranks errors inside the held-out high-confidence group. The last column is the split-averaged Spearman correlation between the SEF and entropy rankings.}
 \label{tab:external-entropy}
 \resizebox{\textwidth}{!}{\input{results/sef_external_entropy_table.tex}}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/figure20_external_entropy_comparison.png}
 \caption{Independent SEF-versus-entropy comparison. Left: error-AUC difference, where positive bars favor SEF conflict. Right: rank correlation between SEF conflict and attribution entropy. The mixed signs and correlations show that neither score is a monotone replacement for the other.}
@@ -1303,7 +1302,7 @@ The expanded comparison does not support a blanket dominance claim. SEF conflict
 
 Figure~\ref{fig:evidence-frontier} turns the external ScopeGate result into a review-budget check. Each curve removes the highest-conflict fraction from the held-out high-confidence group and reports error among the remaining cases.
 
-\begin{figure}[ht]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.94\textwidth]{figures/figure10_evidence_reliability_frontier.png}
 \caption{Independent ScopeGate triage frontiers. Teal curves are Electricity and Magic Telescope, where the positive-direction diagnostic passes in every split. Orange curves mark identified direction reversals. Gray curves are inconclusive or unsupported settings. Reviewing more high-conflict cases lowers accepted-case error in the supported tasks but can raise it in reversal settings.}
@@ -1318,7 +1317,7 @@ The frontier makes the deployment boundary visible. On Magic Telescope, reviewin
 
 Table~\ref{tab:method-comparison} summarizes the role of SEF relative to common alternatives. The table is not meant to say that SEF dominates all existing methods. It shows the specific gap SEF is designed to fill.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Conceptual comparison. SEF is positioned as an evidence-audit layer, not as a replacement for attribution, confidence, calibration, or selective prediction.}
 \label{tab:method-comparison}
@@ -1384,7 +1383,7 @@ All experiments are implemented as standalone Python scripts. The replication ar
 
 The seed schedule is fixed in the scripts. Standard benchmark, selective-baseline, ablation, conformal-screen, healthcare, entropy-comparison, and identification stress-test experiments use 50 repetitions. The identification stress test uses deterministic offsets from seed \texttt{20260618}; the other repeated studies in this group use seeds $0,\ldots,49$. The black-box model-agnostic experiment uses seeds $0,\ldots,19$. The finance stress test uses seeds $0,\ldots,24$. ScopeGate uses seeds $0,\ldots,14$ plus seed \texttt{20260618} for the paired sign-flip test. The independent external replication uses seeds $0,\ldots,9$. The synthetic and Covertype sampling steps use seed \texttt{20260617}; Covertype bootstrap intervals use deterministic offsets from that seed. The multi-class standard tasks use seeds $0,\ldots,29$, and the multi-class Covertype splits use seeds $0,\ldots,4$ after drawing the working sample.
 
-\begin{table}[ht]
+\begin{table}[!htbp]
 \centering
 \caption{Public data sources and identifiers used in the experiments.}
 \label{tab:data-sources}

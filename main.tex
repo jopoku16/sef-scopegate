@@ -347,6 +347,7 @@ The evidence flip margin is the smallest total amount of signed evidence that mu
 \[
 m_{\mathrm{flip}}(x)=\frac{|S^+(x)-S^-(x)|}{2}.
 \]
+Here ``move'' means transferring the same amount from one side to the other. A transfer of size $u$ lowers the winning total by $u$ and raises the losing total by $u$, so it closes the evidence gap by $2u$.
 \end{definition}
 
 \begin{theorem}[Conflict controls flip margin]
@@ -746,7 +747,7 @@ We also check the screen empirically. On each standard benchmark, we split the d
 \label{fig:conformal-screen}
 \end{figure}
 
-The result is not perfect, and it should not be oversold. The screen works clearly on three of the four standard tasks. On Wine, the flagged group is small and not more error-prone on average. This is still useful: it shows that the conformal screen gives a calibrated evidence flag, not a guarantee that every flagged group will have higher prediction error in every small data set.
+The result is not perfect, and it should not be oversold. The screen works clearly on three of the four standard tasks. On Wine, the flagged group is small and not more error-prone on average. A likely explanation is the low residual error in this binary Wine task: after the model separates most observations correctly, too few errors remain for the flagged tail to show a stable enrichment pattern. This is still useful because it shows that the conformal screen gives a calibrated evidence flag, not a guarantee that every flagged group will have higher prediction error in every small data set.
 
 \section{Algorithm}
 
@@ -948,15 +949,6 @@ The unweighted average over the eight data-set-by-model rows in Table~\ref{tab:m
 
 This experiment also gives a useful caution. On these clean benchmark tasks, ordinary model confidence is a strong triage baseline. SEF should therefore be viewed as an evidence audit layer, not as a universal replacement for confidence. Its value is that it explains why a prediction may be fragile: the evidence itself is internally conflicted.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.86\textwidth]{figures/figure10_evidence_reliability_frontier.png}
-\caption{Evidence Reliability Frontier for SEF-Audit. The frontier shows accepted-case error as a function of the fraction of cases sent to review. The curves summarize standard data sets, the large Covertype benchmark, and the repeated black-box robustness experiment.}
-\label{fig:evidence-frontier}
-\end{figure}
-
-Figure~\ref{fig:evidence-frontier} summarizes the operational role of SEF-Audit. The same review-budget idea applies across small standard data sets, the large Covertype benchmark, and repeated black-box models. The curve is not meant to replace accuracy or calibration metrics. It answers a different question: how much review is needed to make the automatically accepted cases safer?
-
 \FloatBarrier
 
 \section{Ablation Study}
@@ -1132,6 +1124,35 @@ At the same time, the direction is not universal. Mammography, PC1 defects, KC1 
 
 This external replication moves the method from a set of examples to a broader empirical claim. The claim is not that high conflict is always bad. The claim is that signed evidence conflict is a measurable structure that often carries conditional error information, and ScopeGate is needed to decide whether that information points in the review direction a practitioner wants.
 
+The external suite also gives a stronger test of whether SEF is merely attribution entropy under another name. Table~\ref{tab:external-entropy} compares the two scores, Gini spread, and low confidence inside the same held-out high-confidence groups. Figure~\ref{fig:external-entropy} shows both the error-ranking difference and the rank correlation between SEF conflict and entropy.
+
+\begin{table}[ht]
+\centering
+\caption{Independent comparison with attribution entropy on ten external data sets. Error AUC measures how well each score ranks errors inside the held-out high-confidence group. The last column is the split-averaged Spearman correlation between the SEF and entropy rankings.}
+\label{tab:external-entropy}
+\resizebox{\textwidth}{!}{\input{results/sef_external_entropy_table.tex}}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/figure20_external_entropy_comparison.png}
+\caption{Independent SEF-versus-entropy comparison. Left: error-AUC difference, where positive bars favor SEF conflict. Right: rank correlation between SEF conflict and attribution entropy. The mixed signs and correlations show that neither score is a monotone replacement for the other.}
+\label{fig:external-entropy}
+\end{figure}
+
+The expanded comparison does not support a blanket dominance claim. SEF conflict ranks errors substantially better than entropy on Adult Income, Spambase, KC1 defects, and Magic Telescope, with the largest gain on Magic Telescope ($+0.276$). Entropy is clearly stronger on Phoneme ($-0.190$) and moderately stronger on Mammography ($-0.058$). Low confidence remains the strongest single raw ranking score on eight of the ten tasks; Magic Telescope is the clearest exception, where SEF conflict has AUC $0.722$ versus $0.568$ for low confidence. The SEF--entropy rank correlation ranges from $-0.101$ on Phoneme to $0.805$ on Mammography. These results answer the novelty question more directly than the three-data-set healthcare comparison: SEF and entropy can overlap strongly, differ sharply, or favor different rankings depending on the task. Their relationship is empirical and should be reported rather than assumed.
+
+Figure~\ref{fig:evidence-frontier} turns the external ScopeGate result into a review-budget check. Each curve removes the highest-conflict fraction from the held-out high-confidence group and reports error among the remaining cases.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.94\textwidth]{figures/figure10_evidence_reliability_frontier.png}
+\caption{Independent ScopeGate triage frontiers. Teal curves are Electricity and Magic Telescope, where the positive-direction diagnostic passes in every split. Orange curves mark identified direction reversals. Gray curves are inconclusive or unsupported settings. Reviewing more high-conflict cases lowers accepted-case error in the supported tasks but can raise it in reversal settings.}
+\label{fig:evidence-frontier}
+\end{figure}
+
+The frontier makes the deployment boundary visible. On Magic Telescope, reviewing the highest-conflict $30\%$ lowers accepted high-confidence error from about $0.124$ to $0.066$. Electricity also improves, though more modestly. By contrast, accepted error rises on Adult Income and several reversal tasks when high-conflict cases are removed. A single pooled curve would hide this difference. ScopeGate is therefore not an optional refinement: it determines whether a high-conflict review rule is supported in the target population.
+
 \FloatBarrier
 
 \section{Comparison with Alternative Tools}
@@ -1240,6 +1261,8 @@ This section gives a simple guide for using SEF in practice.
 \textbf{Read conflict and confidence together.} A high-confidence prediction is not always a clean prediction. SEF conflict asks whether strong support and strong opposition are both present. Confidence asks how decisive the model output is. These are different questions, and the experiments show that both can be useful.
 
 \textbf{Calibrate before using SEF for review triage.} Compute the proposed review score on a separate calibration sample with observed outcomes. Activate high-SEF-risk review only when the positive-direction permutation diagnostic is adequately informed and rejects at the chosen level. If the estimated direction is negative, if the test does not reject, or if too few errors are observed, do not use high SEF risk as an automatic review rule. Conflict may still be used as an input to a separately trained and cross-validated error model, but its direction must be learned rather than assumed.
+
+\textbf{Plan healthcare validation around informative errors.} The present Diabetes and Heart Disease samples are too small for ScopeGate to support a high-conflict review rule reliably. A healthcare deployment study should specify the smallest clinically relevant conflict--error gap, collect an independent prospective calibration cohort, and continue collecting labeled outcomes until both conflict quartiles contain enough cases and the high-confidence group contains at least 20 errors and 20 correct predictions. The diagnostic should also be repeated by clinically important subgroup. Until those conditions are met, SEF may describe evidence structure, but it should not determine patient-level review decisions.
 
 \textbf{Report the full setup.} A SEF analysis should state the fitted model, the reference distribution, the evidence construction, the perturbation scheme, the number of perturbations, and the review budget. Without these details, the reliability scores are hard to reproduce.
 

@@ -63,7 +63,14 @@ def summarize_external(runs: pd.DataFrame) -> pd.DataFrame:
             diagnostic_pass_rate=("diagnostic_pass", "mean"),
             median_monotone_p=("monotone_p_value", "median"),
             conflict_error_auc=("conflict_error_auc", "mean"),
+            entropy_error_auc=("entropy_error_auc", "mean"),
+            gini_error_auc=("gini_error_auc", "mean"),
             low_confidence_error_auc=("low_confidence_error_auc", "mean"),
+            conflict_top_quartile_error=("conflict_top_quartile_error", "mean"),
+            entropy_top_quartile_error=("entropy_top_quartile_error", "mean"),
+            gini_top_quartile_error=("gini_top_quartile_error", "mean"),
+            low_confidence_top_quartile_error=("low_confidence_top_quartile_error", "mean"),
+            sef_entropy_spearman=("sef_entropy_spearman", "mean"),
             rows_per_second=("rows_per_second", "mean"),
         )
     )
@@ -120,6 +127,46 @@ def make_figure(summary: pd.DataFrame) -> None:
     fig.savefig(FIG_DIR / "figure19_external_replication.png", dpi=220)
 
 
+def write_entropy_table(summary: pd.DataFrame) -> None:
+    lines = [
+        "\\begin{tabular}{lrrrrr}",
+        "\\toprule",
+        "Dataset & SEF AUC & Entropy AUC & Gini AUC & Low-conf. AUC & $\\rho$(SEF, entropy) \\\\",
+        "\\midrule",
+    ]
+    for row in summary.to_dict("records"):
+        lines.append(
+            f"{row['dataset']} & {row['conflict_error_auc']:.3f} & "
+            f"{row['entropy_error_auc']:.3f} & {row['gini_error_auc']:.3f} & "
+            f"{row['low_confidence_error_auc']:.3f} & {row['sef_entropy_spearman']:.3f} \\\\"
+        )
+    lines.extend(["\\bottomrule", "\\end{tabular}", ""])
+    (RES_DIR / "sef_external_entropy_table.tex").write_text("\n".join(lines), encoding="utf-8")
+
+
+def make_entropy_figure(summary: pd.DataFrame) -> None:
+    x = np.arange(len(summary))
+    colors = [DOMAIN_COLORS.get(d, "#777777") for d in summary["domain"]]
+    fig, axes = plt.subplots(1, 2, figsize=(12.6, 4.8))
+
+    axes[0].bar(x, summary["conflict_error_auc"] - summary["entropy_error_auc"], color=colors)
+    axes[0].axhline(0, color="black", linewidth=0.8)
+    axes[0].set_ylabel("Error-AUC difference")
+    axes[0].set_title("SEF conflict minus attribution entropy")
+    axes[0].set_xticks(x)
+    axes[0].set_xticklabels(summary["dataset"], rotation=35, ha="right")
+
+    axes[1].bar(x, summary["sef_entropy_spearman"], color=colors)
+    axes[1].axhline(0, color="black", linewidth=0.8)
+    axes[1].set_ylabel("Spearman rank correlation")
+    axes[1].set_title("Overlap between SEF and entropy rankings")
+    axes[1].set_xticks(x)
+    axes[1].set_xticklabels(summary["dataset"], rotation=35, ha="right")
+
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "figure20_external_entropy_comparison.png", dpi=220)
+
+
 def main() -> None:
     seeds = range(10)
     runs = pd.concat(
@@ -131,6 +178,8 @@ def main() -> None:
     summary.to_csv(RES_DIR / "sef_external_replication_summary.csv", index=False)
     write_table(summary)
     make_figure(summary)
+    write_entropy_table(summary)
+    make_entropy_figure(summary)
     print(summary.to_string(index=False))
 
 

@@ -102,6 +102,8 @@ The latest manuscript version includes:
   deployment warning rather than a side note;
 - an independent ten-data-set external replication suite over 139,325 public
   observations;
+- an external SEF-versus-entropy comparison and direction-aware triage
+  frontiers on the same independent suite;
 - exact seed, epsilon, and data-source details for reproducibility;
 - a method-comparison table.
 
@@ -448,9 +450,13 @@ Generated outputs:
 
 ```text
 figures/figure19_external_replication.png
+figures/figure20_external_entropy_comparison.png
+figures/figure10_evidence_reliability_frontier.png
 results/sef_external_replication_runs.csv
 results/sef_external_replication_summary.csv
 results/sef_external_replication_table.tex
+results/sef_external_entropy_table.tex
+results/sef_audit_frontier_summary.csv
 ```
 
 Headline result:
@@ -464,6 +470,10 @@ Adult Income (+0.056), and PC1 defects (+0.035). The positive-direction
 review diagnostic passes clearly on Electricity and Magic Telescope.
 This supports the scoped claim: conflict often carries information, but
 ScopeGate decides whether high-conflict review is safe in the target domain.
+The direct entropy comparison is intentionally mixed: SEF ranks errors better
+than entropy on several tasks, entropy is better on others, and low confidence
+remains the strongest raw score on eight of ten tasks. The independent triage
+frontiers show why the direction gate is required before deployment.
 ```
 
 ## Stability runtime audit

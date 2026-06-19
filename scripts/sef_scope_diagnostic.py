@@ -119,6 +119,29 @@ def attribution_entropy(evidence: np.ndarray) -> np.ndarray:
     return -(weights * np.log(weights + 1e-12)).sum(axis=1) / np.log(max(evidence.shape[1], 2))
 
 
+def attribution_gini(evidence: np.ndarray) -> np.ndarray:
+    absolute = np.abs(evidence)
+    weights = absolute / (absolute.sum(axis=1, keepdims=True) + 1e-12)
+    return 1.0 - (weights**2).sum(axis=1)
+
+
+def top_quartile_error(error: np.ndarray, score: np.ndarray) -> float:
+    cutoff = np.quantile(score, 0.75)
+    return float(error[score >= cutoff].mean())
+
+
+def accepted_error_after_review(
+    error: np.ndarray, score: np.ndarray, review_fraction: float
+) -> float:
+    if review_fraction <= 0:
+        return float(error.mean())
+    review_n = min(int(np.ceil(review_fraction * len(error))), len(error) - 1)
+    order = np.argsort(-score, kind="mergesort")
+    accepted = np.ones(len(error), dtype=bool)
+    accepted[order[:review_n]] = False
+    return float(error[accepted].mean())
+
+
 def auc_or_nan(y: np.ndarray, score: np.ndarray) -> float:
     return float(roc_auc_score(y, score)) if len(np.unique(y)) == 2 else float("nan")
 
@@ -180,11 +203,13 @@ def analyze_dataset(
         evidence, attribution_seconds, sef_seconds = evidence_from_pipeline(pipe, x_train, x_test)
         sef = evidence_scores(evidence)
         entropy = attribution_entropy(evidence)
+        gini = attribution_gini(evidence)
         high_confidence = confidence >= np.quantile(confidence, 0.50)
 
         e = error[high_confidence]
         c = sef.conflict[high_confidence]
         h = entropy[high_confidence]
+        g = gini[high_confidence]
         low_conf = 1.0 - confidence[high_confidence]
         mass = sef.mass[high_confidence]
         base = np.column_stack([low_conf, h])
@@ -219,8 +244,20 @@ def analyze_dataset(
                 "delta_conditional_auc": augmented_auc - base_auc,
                 "conflict_error_auc": auc_or_nan(e, c),
                 "entropy_error_auc": auc_or_nan(e, h),
+                "gini_error_auc": auc_or_nan(e, g),
                 "low_confidence_error_auc": auc_or_nan(e, low_conf),
                 "mass_error_auc": auc_or_nan(e, mass),
+                "conflict_top_quartile_error": top_quartile_error(e, c),
+                "entropy_top_quartile_error": top_quartile_error(e, h),
+                "gini_top_quartile_error": top_quartile_error(e, g),
+                "low_confidence_top_quartile_error": top_quartile_error(e, low_conf),
+                "sef_entropy_spearman": float(
+                    pd.Series(c).corr(pd.Series(h), method="spearman")
+                ),
+                "conflict_triage_error_00": accepted_error_after_review(e, c, 0.00),
+                "conflict_triage_error_10": accepted_error_after_review(e, c, 0.10),
+                "conflict_triage_error_20": accepted_error_after_review(e, c, 0.20),
+                "conflict_triage_error_30": accepted_error_after_review(e, c, 0.30),
                 "monotone_statistic": statistic,
                 "monotone_p_value": p_value,
                 "conflict_error_gap": gap,

@@ -83,7 +83,7 @@ Signed Evidence Flow goes further:
 - Evidence stability: `Stab(x)`
 - Reliable evidence score: `RES(x)`
 
-## Current readiness upgrades
+## Included analyses
 
 The latest manuscript version includes:
 
@@ -103,8 +103,7 @@ The latest manuscript version includes:
 - an independent ten-data-set external replication suite over 139,325 public
   observations;
 - exact seed, epsilon, and data-source details for reproducibility;
-- a method-comparison table;
-- a theorem stress-test note in `THEOREM_STRESS_TEST.md`.
+- a method-comparison table.
 
 ## Current experiment
 

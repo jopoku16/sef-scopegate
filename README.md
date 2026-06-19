@@ -20,6 +20,12 @@ Run the full core experiment suite:
 python scripts/run_core_experiments.py
 ```
 
+Verify the main mathematical identities against the shared implementation:
+
+```text
+python scripts/verify_mathematical_invariants.py
+```
+
 Compile the manuscript:
 
 ```text
@@ -39,6 +45,8 @@ More exactly:
 
 - standard, selective-baseline, ablation, conformal-screen, healthcare, and
   entropy-comparison experiments use seeds `0` through `49`;
+- the identification stress test uses 50 deterministic repetitions starting
+  from seed `20260618`;
 - model-agnostic black-box robustness uses seeds `0` through `19`;
 - finance stress tests use seeds `0` through `24`;
 - ScopeGate uses seeds `0` through `14`, plus seed `20260618` for the paired
@@ -92,7 +100,14 @@ The latest manuscript version includes:
 - a confidence-masked conflict stress test;
 - a healthcare benchmark beyond confidence;
 - an attribution entropy/Gini comparison;
-- a proof that confidence does not generally identify conflict;
+- an if-and-only-if identification theorem showing exactly when confidence
+  determines conflict for a complete, decision-aligned decomposition;
+- an exact conditional-risk decomposition stating when conflict adds
+  predictive value beyond confidence and other audit variables;
+- a negative-control stress test where conflict is fully identified by
+  confidence and correctly gives no cross-fitted gain;
+- an executable invariant audit for the main algebraic, robustness, and
+  conditional-risk identities;
 - a held-out permutation gate for positive evidence-risk direction;
 - cross-fitted incremental-value tests beyond confidence and attribution entropy;
 - a runtime audit and an explicit analysis of the finance reversals;
@@ -125,6 +140,9 @@ figures/figure2_confidence_vs_conflict.png
 figures/figure3_conflict_error_curve.png
 figures/figure4_single_case_signed_evidence.png
 results/sef_synthetic_summary.csv
+figures/figure21_identification_stress_test.png
+results/sef_identification_stress_test.csv
+results/sef_identification_stress_test_summary.csv
 ```
 
 Headline result from the first run:

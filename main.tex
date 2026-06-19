@@ -4,7 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{natbib}
 \usepackage{placeins}
 
@@ -40,7 +40,7 @@ Florida International University\\
 \maketitle
 
 \begin{abstract}
-Modern data analysis usually gives a prediction, but it often does not say whether the evidence behind that prediction is clear, mixed, or stable. Two cases can have the same fitted confidence while one is supported by evidence that mostly agrees and the other contains strong support and strong opposition. We propose Signed Evidence Flow (SEF), a way to turn a fitted prediction rule and a signed attribution map into an evidence audit. SEF measures support, opposition, conflict, and perturbation stability. We prove that confidence does not generally identify conflict: at a fixed model score, conflict can vary with total evidence mass. We also give geometric identities linking conflict to decision fragility. The main empirical question is whether this missing evidence-mass dimension helps predict errors after confidence is already known. Across healthcare, Covertype, black-box, finance, and a ten-data-set external replication suite, conflict sometimes separates risk within predictions that already look confident. A stricter cross-fitted analysis shows that conflict adds error-ranking information beyond confidence and attribution entropy on several data sets, including two large finance tasks. In the external suite, seven tasks show a positive gain, one is effectively neutral after rounding, and two show a negative gain. However, the direction reverses in several tasks: low-conflict confident cases can be more error-prone than high-conflict confident cases. A naive ``send high-conflict cases to review'' rule would therefore be harmful there. We introduce ScopeGate, a held-out permutation diagnostic that checks the direction before conflict is used for review triage. The result is a scoped method rather than a universal risk score: SEF reveals evidence structure, while a separate calibration sample determines whether that structure is useful for triage in the target population.
+Modern data analysis usually gives a prediction, but it often does not say whether the evidence behind that prediction is clear, mixed, or stable. Two cases can have the same fitted confidence while one is supported by evidence that mostly agrees and the other contains strong support and strong opposition. We propose Signed Evidence Flow (SEF), a way to turn a fitted prediction rule and a signed attribution map into an evidence audit. SEF measures support, opposition, conflict, and perturbation stability. For a complete, decision-aligned decomposition, we give an exact identification theorem: confidence determines conflict if and only if it also determines total evidence mass, and the remaining conditional variance has a closed form. A second result states exactly when conflict can improve loss prediction beyond confidence and other audit variables. We also link conflict geometrically to decision fragility. Across healthcare, Covertype, black-box, finance, and a ten-data-set external replication suite, conflict sometimes separates risk within predictions that already look confident. A stricter cross-fitted analysis shows that conflict adds error-ranking information beyond confidence and attribution entropy on several data sets, including two large finance tasks. In the external suite, seven tasks show a positive gain, one is effectively neutral after rounding, and two show a negative gain. However, the direction reverses in several tasks: low-conflict confident cases can be more error-prone than high-conflict confident cases. A naive ``send high-conflict cases to review'' rule would therefore be harmful there. We introduce ScopeGate, a held-out permutation diagnostic that checks the direction before conflict is used for review triage. The result is a scoped method rather than a universal risk score: SEF reveals evidence structure, while a separate calibration sample determines whether that structure is useful for triage in the target population.
 \end{abstract}
 
 \noindent\textbf{Keywords:} interpretable learning; evidence decomposition; stability; conformal prediction; model explanation; uncertainty quantification; data analysis
@@ -104,7 +104,7 @@ SEF is not meant to replace prediction models. It sits on top of them. A user ca
 
 This paper makes three main contributions.
 
-First, we define a signed evidence-flow decomposition for model outputs. The decomposition can be built from Shapley-style contrasts, model-specific additive decompositions, or other attribution maps that return signed evidence. We also show exactly why confidence does not generally determine conflict, even when both come from the same fitted model.
+First, we define a signed evidence-flow decomposition for model outputs. The decomposition can be built from Shapley-style contrasts, model-specific additive decompositions, or other attribution maps that return signed evidence. For complete, decision-aligned evidence, we give an if-and-only-if theorem for when confidence determines conflict, an exact formula for the conflict variation left within a confidence level, and an exact risk decomposition for when conflict adds loss-prediction value beyond existing audit variables.
 
 Second, we make evidence conflict a statistical object. We define support, opposition, evidence mass, direction, conflict, and flip margin. We prove that conflict is a normalized distance from one-sided evidence, derive a perturbation radius before a decision can flip, and extend the construction to multi-class predictions through pairwise class gaps. We then add a finite-sample permutation diagnostic that checks whether increasing conflict is positively associated with loss in a held-out target sample.
 
@@ -233,6 +233,25 @@ and the total evidence mass is
 M(x)=S^+(x)+S^-(x).
 \]
 
+\begin{definition}[Decision-aligned evidence]
+Let $\tau$ be the decision threshold on the model-score scale. Evidence is
+\emph{decision-aligned} when the threshold-centered score has the complete
+decomposition
+\[
+f(x)-\tau=\sum_{j=1}^p E_j(x)=N(x).
+\]
+If the feature-level evidence instead sums to $f(x)-\mu_0$, decision alignment
+is obtained by adding the fixed offset $\mu_0-\tau$ as one more evidence
+coordinate. All results that connect conflict to model confidence or decision
+flips use decision-aligned evidence. The purely algebraic support, opposition,
+and distance identities do not need this extra convention.
+\end{definition}
+
+This distinction matters. A reference-centered decomposition explains movement
+away from a reference prediction. A decision-aligned decomposition explains
+movement relative to the actual decision threshold. They coincide when
+$\mu_0=\tau$.
+
 \begin{definition}[Evidence direction index]
 For a small $\varepsilon>0$, define
 \[
@@ -289,12 +308,12 @@ From the conflict-direction identity, $1-C(x)=|D(x)|=|N(x)|/M(x)$. Rearranging g
 
 This corollary explains why confidence alone can miss something important. In many classifiers, confidence is mainly tied to the size of a score or margin. Two cases can have similar scores, while one case has much more total evidence pushing in both directions. SEF exposes that hidden evidence mass through conflict.
 
-\begin{proposition}[Conflict is not identified by confidence]
+\begin{proposition}[Conflict is not identified by a net-score magnitude]
 Assume $\varepsilon=0$. Fix a nonzero net evidence value $n$ and any evidence mass $m\geq |n|$. There are nonnegative support and opposition values with $S^+-S^-=n$ and $S^++S^-=m$, and their conflict is
 \[
 C=1-\frac{|n|}{m}.
 \]
-Therefore a model score, margin, or confidence value that determines $n$ does not determine conflict unless evidence mass is itself determined by that score.
+Therefore a score magnitude or confidence value that determines $|n|$ does not determine conflict unless evidence mass is itself determined by that score magnitude.
 \end{proposition}
 
 \begin{proof}
@@ -307,7 +326,143 @@ S^-=\frac{m-n}{2}.
 The condition $m\geq |n|$ makes both quantities nonnegative. Their difference is $n$, their sum is $m$, and the conflict-direction identity gives $C=1-|n|/m$.
 \end{proof}
 
-This proposition resolves a basic identification question. Conflict and confidence may be computed from the same features and fitted parameters, but they compress those inputs differently. Confidence records the net score. Conflict also depends on how much evidence cancels before that net score is reached. The proposition does not prove that conflict predicts error. It proves only that conflict can contain information that is absent from confidence. Whether that information is useful must be tested on held-out outcomes.
+This proposition resolves a basic identification question. Conflict and a
+score magnitude may be computed from the same features and fitted parameters,
+but they compress those inputs differently. The score magnitude records the
+size of the net evidence. Conflict also depends on how much evidence cancels
+before that net value is reached. The proposition does not prove that conflict
+predicts error. It proves only that conflict can contain information that is
+absent from the net-score magnitude. The next theorem states when this becomes
+a statement about reported confidence.
+
+\pagebreak
+\begin{theorem}[General and decision-aligned identification boundary]
+Treat $N$, $M$, and $C$ as random variables over cases. Assume
+$\varepsilon=0$ and $M>0$ almost surely, and let $Q$ be any reported
+confidence score.
+
+\begin{enumerate}
+\item Conflict is determined by confidence if and only if the normalized net
+evidence $|N|/M$ is determined by confidence. Moreover,
+\[
+\operatorname{Var}(C\mid Q)
+=
+\operatorname{Var}\!\left(\frac{|N|}{M}\,\middle|\,Q\right).
+\]
+\item Suppose in addition that $N\neq 0$ almost surely and $|N|$ is determined
+by $Q$. Then conflict is determined by confidence if and only if evidence mass
+is determined by confidence, and
+\[
+\operatorname{Var}(C\mid Q)
+=
+|N|^2\operatorname{Var}\!\left(\frac{1}{M}\,\middle|\,Q\right).
+\]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The conflict identity gives
+\[
+C=1-\frac{|N|}{M}.
+\]
+Therefore $C$ is a function of $Q$ if and only if $|N|/M$ is a function of
+$Q$, and subtracting from one does not change conditional variance. This proves
+the first claim.
+
+For the second claim, write $|N|=a(Q)$ for some measurable function $a$. If
+$M=h(Q)$, then $C=1-a(Q)/h(Q)$ is determined by $Q$. Conversely, if
+$C=g(Q)$, then
+\[
+M=\frac{a(Q)}{1-g(Q)}
+\]
+is determined by $Q$. The denominator is positive because $N\neq0$ implies
+$C<1$. Finally, conditional on $Q$, the value $|N|$ is fixed, so
+\[
+\operatorname{Var}\!\left(\frac{|N|}{M}\,\middle|\,Q\right)
+=
+|N|^2\operatorname{Var}\!\left(\frac{1}{M}\,\middle|\,Q\right).
+\]
+\end{proof}
+
+\begin{corollary}[Binary logistic confidence]
+For a binary logistic classifier with decision-aligned evidence,
+\[
+Q=\{1+\exp(-|N|)\}^{-1}
+\]
+is one-to-one in $|N|$. Therefore conflict is determined by reported
+confidence if and only if evidence mass is determined by reported confidence.
+\end{corollary}
+
+\begin{proof}
+The logistic confidence map is strictly increasing on $|N|\geq0$, so $|N|$ is
+determined by $Q$. Apply the second part of the theorem.
+\end{proof}
+
+The theorem gives a sharp answer to the identification objection without
+requiring a special baseline. For any reported confidence, it identifies the
+unresolved quantity as normalized net evidence. For a decision-aligned
+logistic decomposition, this simplifies further: conflict can differ within a
+confidence level only when total evidence mass differs within that level. The
+conditional variance measures exactly how much evidence structure remains
+hidden after confidence is known.
+
+\begin{theorem}[Exact conditional value for error-risk prediction]
+Let $L$ be any square-integrable loss, such as the binary indicator that a classifier is wrong. Let $Z$ collect the information already used by an audit model, for example confidence and attribution entropy. Define
+\[
+\mu_0(Z)=\E(L\mid Z),
+\qquad
+\mu_1(Z,C)=\E(L\mid Z,C).
+\]
+Under squared-error risk, the best possible improvement from adding conflict is
+\[
+\E\{(L-\mu_0)^2\}
+-
+\E\{(L-\mu_1)^2\}
+=
+\E\{(\mu_1-\mu_0)^2\}
+=
+\E\!\left[\operatorname{Var}\{\mu_1(Z,C)\mid Z\}\right].
+\]
+The improvement is positive if and only if mean loss changes with conflict after $Z$ is known.
+\end{theorem}
+
+\begin{proof}
+Write
+\[
+L-\mu_0=(L-\mu_1)+(\mu_1-\mu_0).
+\]
+After squaring and taking expectations, the cross term is zero because
+\[
+\E\{L-\mu_1\mid Z,C\}=0.
+\]
+This gives the first equality. Also,
+\[
+\E(\mu_1\mid Z)=\E\{\E(L\mid Z,C)\mid Z\}=\E(L\mid Z)=\mu_0,
+\]
+so the second equality is the conditional-variance identity.
+\end{proof}
+
+This result separates two claims that are easy to mix up. The first theorem
+says when conflict contains structure not identified by confidence under a
+decision-aligned decomposition. The second says when that structure is useful
+for predicting loss. Variation in evidence mass is necessary for conflict to
+vary within confidence under these assumptions, but it is not enough to
+guarantee better error ranking. The loss must also change with that remaining
+variation. This is why the paper tests incremental value and review direction
+separately.
+
+\subsection{Identification stress test}
+
+We checked both the positive and negative sides of these results in a controlled simulation. Confidence takes twelve discrete levels, so the base error-risk model can estimate a separate error rate at every confidence level. In the identified-mass scenario, evidence mass is fixed within each level. Conflict is then a deterministic function of confidence, and error depends only on confidence. In the hidden-mass scenario, evidence mass varies within each level and error also depends on conflict. We repeat each scenario 50 times with 6,000 cases and use five-fold cross-fitting.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/figure21_identification_stress_test.png}
+\caption{Stress test of the identification boundary. When evidence mass is determined by confidence, conditional conflict variance is zero and adding conflict gives essentially no cross-fitted Brier or error-AUC gain. When evidence mass varies within confidence levels and loss changes with conflict, both gains become positive.}
+\label{fig:identification-stress}
+\end{figure}
+
+The negative control behaves as the theorem predicts. Its average conditional conflict variance is exactly $0$ up to numerical precision. Its mean cross-fitted Brier gain is $-0.0000003$, and its mean error-AUC change is $-0.000002$. In the hidden-mass scenario, average conditional conflict variance is $0.0260$, mean Brier gain is $0.00675$, and mean error-AUC gain is $0.0221$. Brier gain is positive in all 50 repetitions. The purpose is not to claim these synthetic effect sizes are universal. It is to show that SEF gives no artificial gain when confidence already identifies conflict, while recovering conditional value when hidden evidence mass truly affects error risk.
 
 \begin{theorem}[Conflict as distance from one-sided evidence]
 Let $e(x)=(E_1(x),\ldots,E_p(x))$ and assume $M(x)>0$ and $\varepsilon=0$. Define the two one-sided evidence cones
@@ -336,7 +491,8 @@ This result gives conflict a geometric meaning. Low conflict means the signed ev
 
 \section{Decision Fragility and Flip Margin}
 
-Suppose the decision is based on the sign of net evidence:
+Suppose the evidence is decision-aligned, so the decision is based on the sign
+of net evidence:
 \[
 \widehat{y}(x)=\one\{N(x)\geq 0\}.
 \]
@@ -702,7 +858,8 @@ A_i
 =
 C(X_i)+\{1-\operatorname{Stab}(X_i)\}.
 \]
-Other bounded risk scores may be used, including prediction error weighted by evidence unreliability.
+Other bounded, label-free evidence-risk scores may be used. The score for a
+future case must be computable without knowing that case's outcome.
 
 Let $q_{1-\alpha}$ be the split-conformal quantile of $\{A_i:i\in\mathcal{I}_{cal}\}$:
 \[
@@ -712,18 +869,20 @@ q_{1-\alpha}
 \left\lceil (|\mathcal{I}_{cal}|+1)(1-\alpha)\right\rceil
 \text{th order statistic.}
 \]
+If this rank equals $|\mathcal{I}_{cal}|+1$, we use the standard convention
+$q_{1-\alpha}=+\infty$.
 
 For a new point $x$, SEF flags the prediction as evidence-reliable when
 \[
 A(x)\leq q_{1-\alpha}.
 \]
 
-\begin{theorem}[Distribution-free screening guarantee]
+\begin{proposition}[Distribution-free screening guarantee]
 Assume the calibration points and the new test point are exchangeable. Then
 \[
 \Pp\{A(X_{new})\leq q_{1-\alpha}\}\geq 1-\alpha.
 \]
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
 This is the standard split-conformal rank argument. Under exchangeability, the rank of the test score among the calibration scores and the test score is uniform. Choosing the conformal quantile gives the stated coverage guarantee.
@@ -1223,7 +1382,7 @@ SEF is best understood as a model-agnostic evidence-audit layer. It is not a new
 
 All experiments are implemented as standalone Python scripts. The replication archive includes a single runner, \texttt{scripts/run\_core\_experiments.py}, that regenerates the main result tables and figures. The shared SEF implementation uses $\varepsilon=10^{-12}$ for numerical stability in all reported experiments; the algebraic identities in the theory are stated for $\varepsilon=0$ to show the clean population form.
 
-The seed schedule is fixed in the scripts. Standard benchmark, selective-baseline, ablation, conformal-screen, healthcare, and entropy-comparison experiments use seeds $0,\ldots,49$. The black-box model-agnostic experiment uses seeds $0,\ldots,19$. The finance stress test uses seeds $0,\ldots,24$. ScopeGate uses seeds $0,\ldots,14$ plus seed \texttt{20260618} for the paired sign-flip test. The independent external replication uses seeds $0,\ldots,9$. The synthetic and Covertype sampling steps use seed \texttt{20260617}; Covertype bootstrap intervals use deterministic offsets from that seed. The multi-class standard tasks use seeds $0,\ldots,29$, and the multi-class Covertype splits use seeds $0,\ldots,4$ after drawing the working sample.
+The seed schedule is fixed in the scripts. Standard benchmark, selective-baseline, ablation, conformal-screen, healthcare, entropy-comparison, and identification stress-test experiments use 50 repetitions. The identification stress test uses deterministic offsets from seed \texttt{20260618}; the other repeated studies in this group use seeds $0,\ldots,49$. The black-box model-agnostic experiment uses seeds $0,\ldots,19$. The finance stress test uses seeds $0,\ldots,24$. ScopeGate uses seeds $0,\ldots,14$ plus seed \texttt{20260618} for the paired sign-flip test. The independent external replication uses seeds $0,\ldots,9$. The synthetic and Covertype sampling steps use seed \texttt{20260617}; Covertype bootstrap intervals use deterministic offsets from that seed. The multi-class standard tasks use seeds $0,\ldots,29$, and the multi-class Covertype splits use seeds $0,\ldots,4$ after drawing the working sample.
 
 \begin{table}[ht]
 \centering
@@ -1292,7 +1451,26 @@ Signed Evidence Flow is built around a simple belief: prediction alone is not en
 
 The method is especially suited for settings where a prediction must be explained to people who care about reliability. In these settings, a model should not only say what it predicts. It should also say whether the evidence behind the prediction is clean or conflicted.
 
-The main message is practical. SEF reveals whether evidence is one-sided, opposed, or unstable, and the identification result shows that this structure is not recoverable from confidence alone. But evidence structure is not the same as error risk. A held-out calibration sample must decide whether conflict has a positive, negative, or inconclusive relationship with error in the target population. SEF provides the description; ScopeGate controls the deployment claim.
+The main message is practical. SEF reveals whether evidence is one-sided,
+opposed, or unstable. For complete, decision-aligned evidence, the
+identification result states exactly when this structure is not recoverable
+from confidence alone. But evidence structure is not the same as error risk. A
+held-out calibration sample must decide whether conflict has a positive,
+negative, or inconclusive relationship with error in the target population.
+SEF provides the description; ScopeGate controls the deployment claim.
+
+\section*{Broader Impact}
+
+SEF may help people inspect predictions in healthcare, finance, public policy,
+and other high-stakes settings. Its main positive use is to show when the
+evidence behind a prediction is mixed or unstable, so that a person can review
+the case more carefully. The main risk is misuse: conflict could be treated as
+a universal error score even though this paper shows that its direction can
+reverse. SEF should therefore not decide access to care, credit, employment, or
+other important outcomes by itself. Any review rule should be tested on a
+separate, representative calibration sample, checked across relevant
+subgroups, and used alongside ordinary accuracy, calibration, and fairness
+checks.
 
 \section*{Acknowledgments}
 

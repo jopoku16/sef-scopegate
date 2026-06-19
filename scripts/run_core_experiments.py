@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 SCRIPTS = [
     "sef_synthetic_experiment.py",
+    "sef_identification_stress_test.py",
     "sef_standard_benchmarks.py",
     "sef_covtype_benchmark.py",
     "sef_model_agnostic_robustness.py",

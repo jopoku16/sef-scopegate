@@ -1,6 +1,6 @@
 # Signed Evidence Flow
 
-Working manuscript for Paper 5:
+Working research manuscript:
 
 **Signed Evidence Flow: Conflict-Aware and Stability-Calibrated Data Analysis**
 
@@ -509,5 +509,4 @@ the script is included so users can measure the cost in their own setting.
 
 ## Authors
 
-Jeffery Opoku, The University of Texas Rio Grande Valley  
-David Banahene, Florida International University
+Author information omitted for anonymous review.

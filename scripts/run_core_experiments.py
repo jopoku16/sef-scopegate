@@ -1,4 +1,4 @@
-"""Run the core reproducibility suite for the SEF manuscript."""
+"""Run the core reproducibility suite for SEF."""
 
 from __future__ import annotations
 

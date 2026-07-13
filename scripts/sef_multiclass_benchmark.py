@@ -2,7 +2,7 @@
 
 The experiment audits the predicted class against its strongest rival. Pairwise
 signed evidence is computed from a multinomial logistic model, matching the
-multi-class construction in the manuscript.
+multi-class construction in the SEF implementation.
 """
 
 from __future__ import annotations

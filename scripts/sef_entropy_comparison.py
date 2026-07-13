@@ -1,6 +1,6 @@
 """Compare SEF conflict with attribution entropy and Gini-style spread.
 
-This addresses a natural reviewer question:
+This addresses a natural diagnostic question:
 
     Is SEF conflict just attribution entropy under another name?
 

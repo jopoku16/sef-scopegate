@@ -1,6 +1,6 @@
 """Repeated standard benchmark experiments for Signed Evidence Flow.
 
-This script keeps the paper's first benchmark simple, but no longer relies on a
+This script keeps the first benchmark simple, but no longer relies on a
 single train-test split. Each task is repeated over many random splits, and the
 table reports mean errors with uncertainty.
 """

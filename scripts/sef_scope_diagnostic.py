@@ -1,4 +1,4 @@
-"""Reviewer-facing scope diagnostics for Signed Evidence Flow.
+"""Scope diagnostics for Signed Evidence Flow.
 
 This script asks two questions on held-out, high-confidence predictions:
 

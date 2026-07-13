@@ -1,6 +1,6 @@
 """Core utilities for Signed Evidence Flow (SEF).
 
-This small module is intentionally lightweight. It keeps the paper's algorithm
+This small module is intentionally lightweight. It keeps the SEF algorithm
 executable without requiring a full package installation.
 """
 
@@ -97,4 +97,3 @@ def reliability_frontier(error: np.ndarray, risk: np.ndarray, grid: np.ndarray |
     if grid is None:
         grid = np.linspace(0.0, 0.5, 11)
     return [audit_by_budget(error, risk, float(review_rate)) for review_rate in grid]
-
